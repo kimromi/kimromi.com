@@ -5,6 +5,7 @@ const Note = ({ note }) => {
     <main>
       <h1>{note.title}</h1>
       <p>{note.publishedAt}</p>
+      <p>{note.category}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${note.body}`,
