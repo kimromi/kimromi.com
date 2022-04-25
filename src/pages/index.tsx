@@ -6,7 +6,7 @@ import { Card } from '../components/Card';
 import { Footer } from '../components/Footer';
 
 const Home: NextPage = () => (
-  <div className="container mx-auto px-4">
+  <div className="container px-4 mx-auto">
     <Header />
 
     <div>
