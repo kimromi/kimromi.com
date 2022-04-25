@@ -6,13 +6,13 @@ export const client = createClient({
 });
 
 export type Note = {
-  id: string,
-  title: string,
-  body: string
-  category?: string
-  publishedAt: string
-}
+  id: string;
+  title: string;
+  body: string;
+  category?: string;
+  publishedAt: string;
+};
 
 export type Notes = {
-  notes: Note[],
-}
+  notes: Note[];
+};

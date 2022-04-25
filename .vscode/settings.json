@@ -1,0 +1,29 @@
+{
+  // インデントはスペース2つ
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // 末尾に改行を挿入する
+  "files.insertFinalNewline": true,
+  // Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  // ESLint
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "parserOptions": {
+      "project": ["${workspaceFolder}/tsconfig.json"]
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true
+  }
+}
