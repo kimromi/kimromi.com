@@ -8,16 +8,18 @@ type Props = {
 
 const NotePage: NextPage<Props> = ({ note }) => {
   return (
-    <main>
-      <h1>{note.title}</h1>
-      <p>{note.publishedAt}</p>
-      <p>{note.category}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${note.body}`,
-        }}
-      />
-    </main>
+    <div className="container mx-auto px-4">
+      <main>
+        <h1>{note.title}</h1>
+        <p>{note.publishedAt}</p>
+        <p>{note.category}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${note.body}`,
+          }}
+        />
+      </main>
+    </div>
   );
 };
 

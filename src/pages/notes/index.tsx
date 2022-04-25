@@ -7,7 +7,7 @@ type Props = Notes;
 
 const NotesPage: NextPage<Props> = ({ notes }) => {
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <ul>
         {notes.map((note) => (
           <li key={note.id}>
