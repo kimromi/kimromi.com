@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const Header = (): JSX.Element => (
-  <header className="mt-24 mb-20 flex flex-col justify-center">
+  <header className="flex flex-col justify-center mt-24 mb-20">
     <div className="text-center">
       <Link href="/">
         <a>
@@ -16,13 +16,13 @@ export const Header = (): JSX.Element => (
         </a>
       </Link>
     </div>
-    <div className="mt-4 text-center text-3xl">
+    <div className="mt-4 text-3xl text-center">
       <Link href="/">
         <a>kimromi</a>
       </Link>
     </div>
 
-    <div className="mt-4 text-center text-sm text-gray-600">
+    <div className="mt-4 text-sm text-center text-gray-600">
       A Software Developer
     </div>
   </header>

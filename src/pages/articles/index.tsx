@@ -13,8 +13,8 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
     <>
       <Header />
 
-      <div className="container mx-auto px-4">
-        <h1 className="mb-8 pb-4 border-b border-gray-600 text-2xl">Blog</h1>
+      <div className="container px-4 mx-auto">
+        <h1 className="pb-4 mb-8 text-2xl border-b border-gray-600">Blog</h1>
         <ul>
           {articles.map((article) => (
             <li key={article.id}>

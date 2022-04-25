@@ -13,7 +13,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
     <>
       <Header />
 
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         <main>
           <h1>{article.title}</h1>
           <p>{article.publishedAt}</p>
