@@ -1,10 +1,10 @@
-import { client } from "../../lib/microCMSClient";
-import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import type { Note } from "../../lib/microCMSClient";
+import { client } from '../../lib/microCMSClient';
+import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import type { Note } from '../../lib/microCMSClient';
 
 type Props = {
-  note: Note,
-}
+  note: Note;
+};
 
 const NotePage: NextPage<Props> = ({ note }) => {
   return (
@@ -19,10 +19,10 @@ const NotePage: NextPage<Props> = ({ note }) => {
       />
     </main>
   );
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await client.get({ endpoint: "notes" });
+  const data = await client.get({ endpoint: 'notes' });
 
   const paths = data.contents.map((content) => `/notes/${content.id}`);
   return { paths, fallback: false };
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id as string;
-  const data = await client.get({ endpoint: "notes", contentId: id });
+  const data = await client.get({ endpoint: 'notes', contentId: id });
 
   return {
     props: {

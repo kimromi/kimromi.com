@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { client } from "../../lib/microCMSClient";
-import type { NextPage, GetStaticProps } from 'next'
-import type { Notes } from "../../lib/microCMSClient";
+import Link from 'next/link';
+import { client } from '../../lib/microCMSClient';
+import type { NextPage, GetStaticProps } from 'next';
+import type { Notes } from '../../lib/microCMSClient';
 
-type Props = Notes
+type Props = Notes;
 
 const NotesPage: NextPage<Props> = ({ notes }) => {
   return (
@@ -19,10 +19,10 @@ const NotesPage: NextPage<Props> = ({ notes }) => {
       </ul>
     </div>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.get({ endpoint: "notes" });
+  const data = await client.get({ endpoint: 'notes' });
 
   return {
     props: {
@@ -31,4 +31,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default NotesPage
+export default NotesPage;
