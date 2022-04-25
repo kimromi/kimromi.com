@@ -1,0 +1,20 @@
+{
+  // インデントはスペース2つ
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // 末尾に改行を挿入する
+  "files.insertFinalNewline": true,
+  // ESLint
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "parserOptions": {
+      "project": [
+        "${workspaceFolder}/tsconfig.json"
+      ]
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true
+  }
+}
