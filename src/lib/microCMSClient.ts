@@ -5,7 +5,7 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
-export type Note = {
+export type Article = {
   id: string;
   title: string;
   body: string;
@@ -13,6 +13,6 @@ export type Note = {
   publishedAt: string;
 };
 
-export type Notes = {
-  notes: Note[];
+export type Articles = {
+  articles: Article[];
 };

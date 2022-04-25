@@ -1,9 +1,12 @@
 module.exports = {
-  content: ['./src/pages/**/*.{ts,tsx}'],
+  content: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   theme: {
-    container: {
-      screens: {
-        pc: '768px',
+    screens: {
+      pc: '768px',
+    },
+    extend: {
+      colors: {
+        background: '#191919',
       },
     },
   },
