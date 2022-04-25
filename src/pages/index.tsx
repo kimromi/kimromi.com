@@ -34,6 +34,9 @@ const Home: NextPage = () => (
       >
         <Card note="Slides for speaks">Speaker Deck</Card>
       </a>
+      <a href="https://kimromi.hatenablog.jp/" target="_blank" rel="noreferrer">
+        <Card note="Old Blog">Hatena Blog</Card>
+      </a>
     </div>
 
     <Footer />
