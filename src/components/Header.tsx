@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const Header = (): JSX.Element => (
-  <header className="mb-8 pt-24 pb-12 flex flex-col justify-center">
+  <header className="mt-24 mb-20 flex flex-col justify-center">
     <div className="text-center">
       <Link href="/">
         <a>

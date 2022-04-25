@@ -4,6 +4,7 @@ import type { NextPage, GetStaticProps } from 'next';
 import type { Articles } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
+import { Footer } from '../../components/Footer';
 
 type Props = Articles;
 
@@ -32,6 +33,8 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
           ))}
         </ul>
       </div>
+
+      <Footer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 type Props = {
   article: Article;
@@ -24,6 +25,8 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
           />
         </main>
       </div>
+
+      <Footer />
     </>
   );
 };

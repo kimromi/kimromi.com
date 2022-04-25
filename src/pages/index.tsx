@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import { Header } from '../components/Header';
 import { Card } from '../components/Card';
+import { Footer } from '../components/Footer';
 
 const Home: NextPage = () => (
   <div className="container mx-auto px-4">
@@ -33,7 +34,12 @@ const Home: NextPage = () => (
       >
         <Card note="Slides for speaks">Speaker Deck</Card>
       </a>
+      <a href="https://kimromi.hatenablog.jp/" target="_blank" rel="noreferrer">
+        <Card note="Old Blog">Hatena Blog</Card>
+      </a>
     </div>
+
+    <Footer />
   </div>
 );
 
