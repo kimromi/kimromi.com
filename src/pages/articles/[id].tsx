@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
@@ -12,9 +13,14 @@ type Props = {
 const ArticlePage: NextPage<Props> = ({ article }) => {
   return (
     <>
-      <Header />
+      <Header isSticky>
+        <span className="px-2 text-gray-600">/</span>
+        <Link href="/articles">Blog</Link>
+        <span className="hidden px-2 text-gray-600 pc:inline">/</span>
+        <span className="hidden pc:inline">{article.title}</span>
+      </Header>
 
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto mt-16">
         <main>
           <div className="pb-8 mb-12 border-b border-gray-600">
             <h1 className="pb-2 text-3xl">{article.title}</h1>
