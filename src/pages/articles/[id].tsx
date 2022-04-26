@@ -3,6 +3,7 @@ import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import styles from '../../styles/article.module.css';
 
 type Props = {
   article: Article;
@@ -15,10 +16,18 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
 
       <div className="container px-4 mx-auto">
         <main>
-          <h1>{article.title}</h1>
-          <p>{article.publishedAt}</p>
-          <p>{article.category}</p>
-          <div
+          <div className="pb-8 mb-12 border-b border-gray-600">
+            <h1 className="pb-2 text-3xl">{article.title}</h1>
+            <span className="text-sm text-gray-600">
+              {new Date(article.publishedAt).toLocaleDateString()}
+            </span>
+            <span className="ml-2 text-sm text-gray-600">
+              {article.category}
+            </span>
+          </div>
+
+          <article
+            className={styles.article}
             dangerouslySetInnerHTML={{
               __html: `${article.body}`,
             }}
