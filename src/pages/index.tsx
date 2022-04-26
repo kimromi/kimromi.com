@@ -10,6 +10,11 @@ const Home: NextPage = () => (
     <Header />
 
     <div>
+      <Link href="/about">
+        <a>
+          <Card note="Career">About me</Card>
+        </a>
+      </Link>
       <Link href="/articles">
         <a>
           <Card note="Daily blog">Blog</Card>
