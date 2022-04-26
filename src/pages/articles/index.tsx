@@ -11,10 +11,13 @@ type Props = Articles;
 const ArticlesPage: NextPage<Props> = ({ articles }) => {
   return (
     <>
-      <Header />
+      <Header isSticky>
+        <span className="px-2 text-sm text-gray-600">/</span>
+        <Link href="/articles">Blog</Link>
+      </Header>
 
       <div className="container px-4 mx-auto">
-        <h1 className="pb-4 mb-8 text-2xl border-b border-gray-600">Blog</h1>
+        <h1 className="mt-12 mb-8 text-4xl">Blog</h1>
         <ul>
           {articles.map((article) => (
             <li key={article.id}>
