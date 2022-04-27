@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { NextPage } from 'next';
@@ -7,6 +8,10 @@ import { Footer } from '../../components/Footer';
 const AboutPage: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>About me | kimromi</title>
+      </Head>
+
       <Header isSticky>
         <span className="px-2 text-sm text-gray-600">/</span>
         <Link href="/about">About me</Link>

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import React from 'react';
@@ -7,6 +8,10 @@ import { Footer } from '../components/Footer';
 
 const Home: NextPage = () => (
   <div className="container px-4 mx-auto">
+    <Head>
+      <title>kimromi</title>
+    </Head>
+
     <Header />
 
     <div>
