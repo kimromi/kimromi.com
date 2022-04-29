@@ -5,6 +5,7 @@ import React from 'react';
 import { Header } from '../components/Header';
 import { Card } from '../components/Card';
 import { Footer } from '../components/Footer';
+import { PageTransition } from '../components/layout/PageTransition';
 
 const Home: NextPage = () => (
   <div className="container px-4 mx-auto">
@@ -14,10 +15,10 @@ const Home: NextPage = () => (
 
     <Header />
 
-    <div>
-      <Link href="/about">
+    <PageTransition>
+      <Link href="/hello">
         <a>
-          <Card note="Career">About me</Card>
+          <Card note="About me">Hello</Card>
         </a>
       </Link>
       <Link href="/articles">
@@ -47,7 +48,7 @@ const Home: NextPage = () => (
       <a href="https://kimromi.hatenablog.jp/" target="_blank" rel="noreferrer">
         <Card note="Old Blog">Hatena Blog</Card>
       </a>
-    </div>
+    </PageTransition>
 
     <Footer />
   </div>
