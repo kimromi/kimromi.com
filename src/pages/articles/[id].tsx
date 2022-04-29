@@ -6,6 +6,7 @@ import type { Article } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import styles from '../../styles/article.module.css';
+import { PageTransition } from '../../components/layout/PageTransition';
 
 type Props = {
   article: Article;
@@ -25,26 +26,28 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
         <span className="hidden pc:inline">{article.title}</span>
       </Header>
 
-      <div className="container px-4 mx-auto mt-16">
-        <main>
-          <div className="pb-8 mb-12 border-b border-gray-600">
-            <h1 className="pb-2 text-3xl">{article.title}</h1>
-            <span className="text-sm text-gray-600">
-              {new Date(article.publishedAt).toLocaleDateString()}
-            </span>
-            <span className="ml-2 text-sm text-gray-600">
-              {article.category}
-            </span>
-          </div>
+      <PageTransition>
+        <div className="container px-4 mx-auto mt-16">
+          <main>
+            <div className="pb-8 mb-12 border-b border-gray-600">
+              <h1 className="pb-2 text-3xl">{article.title}</h1>
+              <span className="text-sm text-gray-600">
+                {new Date(article.publishedAt).toLocaleDateString()}
+              </span>
+              <span className="ml-2 text-sm text-gray-600">
+                {article.category}
+              </span>
+            </div>
 
-          <article
-            className={styles.article}
-            dangerouslySetInnerHTML={{
-              __html: `${article.body}`,
-            }}
-          />
-        </main>
-      </div>
+            <article
+              className={styles.article}
+              dangerouslySetInnerHTML={{
+                __html: `${article.body}`,
+              }}
+            />
+          </main>
+        </div>
+      </PageTransition>
 
       <Footer />
     </>

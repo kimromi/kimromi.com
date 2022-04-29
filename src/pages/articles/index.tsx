@@ -6,6 +6,7 @@ import type { Articles } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { Footer } from '../../components/Footer';
+import { PageTransition } from '../../components/layout/PageTransition';
 
 type Props = Articles;
 
@@ -21,26 +22,28 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
         <Link href="/articles">Blog</Link>
       </Header>
 
-      <div className="container px-4 mx-auto">
-        <h1 className="mt-12 mb-8 text-4xl">Blog</h1>
-        <ul>
-          {articles.map((article) => (
-            <li key={article.id}>
-              <Link href={`/articles/${article.id}`}>
-                <a>
-                  <Card
-                    note={`${new Date(
-                      article.publishedAt
-                    ).toLocaleDateString()}`}
-                  >
-                    {article.title}
-                  </Card>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <PageTransition>
+        <div className="container px-4 mx-auto">
+          <h1 className="mt-12 mb-8 text-4xl">Blog</h1>
+          <ul>
+            {articles.map((article) => (
+              <li key={article.id}>
+                <Link href={`/articles/${article.id}`}>
+                  <a>
+                    <Card
+                      note={`${new Date(
+                        article.publishedAt
+                      ).toLocaleDateString()}`}
+                    >
+                      {article.title}
+                    </Card>
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </PageTransition>
 
       <Footer />
     </>
