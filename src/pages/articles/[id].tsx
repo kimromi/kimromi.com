@@ -60,12 +60,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
     queries: { limit: 1000, orders: '-publishedAt' },
   });
 
-  const paths = data.contents.map((content) => `/articles/${content.id}`);
+  const paths = data.contents.map(
+    (content: Article) => `/articles/${content.id}`
+  );
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id = context.params.id as string;
+  const id = context.params?.id as string;
   const data = await client.get({ endpoint: 'articles', contentId: id });
 
   return {

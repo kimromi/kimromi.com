@@ -467,7 +467,7 @@ const LinkCard = ({
       break;
     case 'external':
       imageSrc = '/external.png';
-      categoryStr = externalService;
+      categoryStr = externalService || '';
       break;
   }
 
