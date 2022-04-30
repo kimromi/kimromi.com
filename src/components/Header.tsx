@@ -8,7 +8,7 @@ type Props = {
 
 export const Header = ({ isSticky = false, children }: Props): JSX.Element =>
   isSticky ? (
-    <header className="container flex items-center p-4 mx-auto mb-4 text-sm bg-background pc:sticky pc:top-0 z-50">
+    <header className="container flex z-50 items-center p-4 mx-auto mb-4 text-sm bg-background pc:sticky pc:top-0">
       <Link href="/">
         <a className="flex items-center">
           <Image

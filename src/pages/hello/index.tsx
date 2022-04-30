@@ -19,7 +19,7 @@ const AboutPage: NextPage = () => {
       </Header>
 
       <PageTransition>
-        <main className="container mx-auto px-4 z-0">
+        <main className="container z-0 px-4 mx-auto">
           <div className="text-3xl">Works</div>
           <Timeline>
             <Event>
@@ -341,7 +341,7 @@ const Year = (props: { children: string }) => (
 );
 const Timeline = (props: { children: React.ReactNode }) => (
   <section
-    className="relative mt-6 ml-2 before:content-[''] before:absolute before:w-[2px] before:bg-gray-600 before:top-0 before:-bottom-6"
+    className="relative before:absolute before:top-0 before:-bottom-6 mt-6 ml-2 before:w-[2px] before:content-[''] before:bg-gray-600"
     {...props}
   />
 );
@@ -350,7 +350,7 @@ const Event = ({ children }: { children: React.ReactNode }) => (
 );
 const EventIconWrapper = (props: { children: React.ReactNode }) => (
   <div
-    className="absolute top-1 left-[-15px] flex items-center justify-center w-8 h-8 rounded-full bg-background border-2 border-gray-300"
+    className="flex absolute top-1 left-[-15px] justify-center items-center w-8 h-8 bg-background rounded-full border-2 border-gray-300"
     {...props}
   />
 );
@@ -392,7 +392,7 @@ const LinkCard = ({
   }
 
   return (
-    <div className="mt-4 px-6 py-4 flex items-start rounded-md bg-gray-800 hover:bg-gray-700 ease-in duration-150">
+    <div className="flex items-start py-4 px-6 mt-4 bg-gray-800 hover:bg-gray-700 rounded-md duration-150 ease-in">
       <Image src={imageSrc} width={20} height={20} />
       <div className="ml-2">
         <p>{title}</p>
@@ -403,7 +403,7 @@ const LinkCard = ({
 };
 
 const Note = ({ url }: { url: string }) => (
-  <iframe src={url} className="w-full mt-4" height="230" />
+  <iframe src={url} className="mt-4 w-full" height="230" />
 );
 
 const Border = () => <div className="mt-12 border-t border-gray-600" />;
