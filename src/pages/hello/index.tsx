@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import { Header } from '../../components/Header';
@@ -6,13 +5,12 @@ import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/Link/Link';
 import { ExternalLink } from '../../components/Link/ExternalLink';
+import { Head } from '../../components/layout/Head';
 
 const AboutPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Hello | kimromi</title>
-      </Head>
+      <Head title="Hello | kimromi" description="About kimromi" />
 
       <Header isSticky>
         <span className="px-2 text-sm text-gray-600">/</span>
@@ -419,7 +417,7 @@ const LinkCard = ({
   let categoryStr: string = category;
   switch (category) {
     case 'kimromi.com':
-      imageSrc = '/logo.jpg';
+      imageSrc = '/logo.png';
       break;
     case 'Speaker Deck':
       imageSrc = '/logos/speaker-deck.svg';

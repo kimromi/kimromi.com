@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import type { NextPage } from 'next';
 import React from 'react';
 import { Header } from '../components/Header';
@@ -7,12 +6,11 @@ import { Footer } from '../components/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
 import { Link } from '../components/Link/Link';
 import { ExternalLink } from '../components/Link/ExternalLink';
+import { Head } from '../components/layout/Head';
 
 const Home: NextPage = () => (
   <div className="container px-4 mx-auto">
-    <Head>
-      <title>kimromi</title>
-    </Head>
+    <Head title="kimromi" description="Portfolio site of kimromi" />
 
     <Header />
 

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
@@ -7,17 +6,23 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
+import { Head } from '../../components/layout/Head';
 
 type Props = {
   article: Article;
 };
 
 const ArticlePage: NextPage<Props> = ({ article }) => {
+  const description =
+    article.body.replace(/<.+?>/g, '').substring(0, 100) + '...';
+
   return (
     <>
-      <Head>
-        <title>{article.title} | kimromi</title>
-      </Head>
+      <Head
+        title={`${article.title} | kimromi`}
+        description={description}
+        og={{ type: 'article' }}
+      />
 
       <Header isSticky>
         <span className="px-2 text-gray-600">/</span>
