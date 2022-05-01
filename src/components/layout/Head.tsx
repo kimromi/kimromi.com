@@ -26,7 +26,7 @@ export const Head = ({ title, description, og = {} }: Props): JSX.Element => {
       <meta property="og:type" content={og.type || 'website'} />
       <meta property="og:site_name" content="kimromi" />
       <meta property="og:url" content={og.url || canonical} />
-      <meta property="og:image" content="https://www.kimromi.com/logo.png" />
+      <meta property="og:image" content="https://www.kimromi.com/og.png" />
       <meta property="og:description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@kimromi" />
