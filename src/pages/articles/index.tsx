@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Articles } from '../../lib/microCMSClient';
@@ -7,15 +5,19 @@ import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
+import { Link } from '../../components/Link/Link';
+import { Head } from '../../components/layout/Head';
 
 type Props = Articles;
 
 const ArticlesPage: NextPage<Props> = ({ articles }) => {
   return (
     <>
-      <Head>
-        <title>Blog | kimromi</title>
-      </Head>
+      <Head
+        title="Blog | kimromi"
+        description="Daily blog"
+        og={{ type: 'blog' }}
+      />
 
       <Header isSticky>
         <span className="px-2 text-sm text-gray-600">/</span>
@@ -29,15 +31,13 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
             {articles.map((article) => (
               <li key={article.id}>
                 <Link href={`/articles/${article.id}`}>
-                  <a>
-                    <Card
-                      note={`${new Date(
-                        article.publishedAt
-                      ).toLocaleDateString()}`}
-                    >
-                      {article.title}
-                    </Card>
-                  </a>
+                  <Card
+                    note={`${new Date(
+                      article.publishedAt
+                    ).toLocaleDateString()}`}
+                  >
+                    {article.title}
+                  </Card>
                 </Link>
               </li>
             ))}

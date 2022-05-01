@@ -1,17 +1,16 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
+import { Link } from '../../components/Link/Link';
+import { ExternalLink } from '../../components/Link/ExternalLink';
+import { Head } from '../../components/layout/Head';
 
 const AboutPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Hello | kimromi</title>
-      </Head>
+      <Head title="Hello | kimromi" description="About kimromi" />
 
       <Header isSticky>
         <span className="px-2 text-sm text-gray-600">/</span>
@@ -51,13 +50,9 @@ const AboutPage: NextPage = () => {
               <Month>2022/01</Month>
               <EventTitle>マネーフォワード福岡開発拠点サイト</EventTitle>
               <EventDescription>
-                <a
-                  href="https://fukuoka.moneyforward.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ExternalLink href="https://fukuoka.moneyforward.com/">
                   https://fukuoka.moneyforward.com/
-                </a>
+                </ExternalLink>
               </EventDescription>
               <EventDescription>フロントエンド</EventDescription>
               <EventNote>React(Next.js), TypeScript, Tailwind CSS</EventNote>
@@ -80,16 +75,12 @@ const AboutPage: NextPage = () => {
               <EventDescription>
                 https://fec-fukuoka.connpass.com/event/221846/
               </EventDescription>
-              <a
-                href="https://speakerdeck.com/kimromi/money-forward-pay-for-business-frontend"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://speakerdeck.com/kimromi/money-forward-pay-for-business-frontend">
                 <LinkCard
                   title="マネーフォワード Pay for Businessのフロントエンド"
                   category="Speaker Deck"
                 />
-              </a>
+              </ExternalLink>
             </Event>
 
             <Event>
@@ -104,13 +95,9 @@ const AboutPage: NextPage = () => {
               <Month>2021/09</Month>
               <EventTitle>マネーフォワード Pay for Business</EventTitle>
               <EventDescription>
-                <a
-                  href="https://biz.moneyforward.com/biz-pay/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ExternalLink href="https://biz.moneyforward.com/biz-pay/">
                   https://biz.moneyforward.com/biz-pay/
-                </a>
+                </ExternalLink>
               </EventDescription>
               <EventDescription>フロントエンド</EventDescription>
               <EventNote>React(Next.js), Redux, TypeScript, GraphQL</EventNote>
@@ -127,28 +114,20 @@ const AboutPage: NextPage = () => {
               </EventIconWrapper>
               <Month>2020/09</Month>
               <EventTitle>
-                <a
-                  href="https://biz.moneyforward.com/biz-pay"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ExternalLink href="https://biz.moneyforward.com/biz-pay">
                   Frontend Conference Fukuoka スピンオフ ～福岡人大集合の会～
-                </a>
+                </ExternalLink>
               </EventTitle>
               <EventDescription>
                 https://fec-fukuoka.connpass.com/event/187391/
               </EventDescription>
 
-              <a
-                href="https://speakerdeck.com/kimromi/moneyforward-expense-frontend"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://speakerdeck.com/kimromi/moneyforward-expense-frontend">
                 <LinkCard
                   title="マネーフォワードクラウド経費でのフロントエンドの取り組み"
                   category="Speaker Deck"
                 />
-              </a>
+              </ExternalLink>
             </Event>
 
             <Event>
@@ -172,12 +151,10 @@ const AboutPage: NextPage = () => {
               <EventNote>React, Redux, TypeScript, GraphQL</EventNote>
 
               <Link href="/articles/0cl_o01665u7">
-                <a>
-                  <LinkCard
-                    title="マネーフォワードにジョインして3ヶ月で取り組んだフロントエンドの改善と所感"
-                    category="kimromi.com"
-                  />
-                </a>
+                <LinkCard
+                  title="マネーフォワードにジョインして3ヶ月で取り組んだフロントエンドの改善と所感"
+                  category="kimromi.com"
+                />
               </Link>
             </Event>
 
@@ -245,23 +222,15 @@ const AboutPage: NextPage = () => {
                 https://pepabo.connpass.com/event/63559/
               </EventDescription>
 
-              <a
-                href="https://kimromi.hatenablog.jp/entry/2017/08/30/000000"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://kimromi.hatenablog.jp/entry/2017/08/30/000000">
                 <LinkCard
                   title="第9回ペパボテックカンファレンスでVue.js on Railsというテーマで発表しました"
                   category="kimromi.com"
                 />
-              </a>
-              <a
-                href="https://speakerdeck.com/kimromi/vue-js-on-rails"
-                target="_blank"
-                rel="noreferrer"
-              >
+              </ExternalLink>
+              <ExternalLink href="https://speakerdeck.com/kimromi/vue-js-on-rails">
                 <LinkCard title="Vue.js on Rails" category="Speaker Deck" />
-              </a>
+              </ExternalLink>
             </Event>
 
             <Event>
@@ -278,17 +247,13 @@ const AboutPage: NextPage = () => {
               <EventDescription>フロントエンド / バックエンド</EventDescription>
               <EventNote>JavaScript(Vue.js), Ruby on Rails</EventNote>
 
-              <a
-                href="https://tech.pepabo.com/2017/07/26/muumuu-shopping-cart/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://tech.pepabo.com/2017/07/26/muumuu-shopping-cart/">
                 <LinkCard
                   title="ムームードメインがショッピングカート機能をリリースしました！"
                   category="external"
                   externalService="tech.pepabo.com"
                 />
-              </a>
+              </ExternalLink>
             </Event>
 
             <Event>
@@ -314,26 +279,18 @@ const AboutPage: NextPage = () => {
                 MySQL, Chef, Terraform
               </EventNote>
 
-              <a
-                href="https://speakerdeck.com/kimromi/prepare-muumuu-domains-javascript"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://speakerdeck.com/kimromi/prepare-muumuu-domains-javascript">
                 <LinkCard
                   title="ムームードメインのJavaScript環境を整えた話"
                   category="Speaker Deck"
                 />
-              </a>
-              <a
-                href="https://speakerdeck.com/kimromi/saikyo-no-pull-request"
-                target="_blank"
-                rel="noreferrer"
-              >
+              </ExternalLink>
+              <ExternalLink href="https://speakerdeck.com/kimromi/saikyo-no-pull-request">
                 <LinkCard
                   title="ぼくがかんがえたさいきょうのPull Request"
                   category="Speaker Deck"
                 />
-              </a>
+              </ExternalLink>
             </Event>
 
             <Border />
@@ -460,7 +417,7 @@ const LinkCard = ({
   let categoryStr: string = category;
   switch (category) {
     case 'kimromi.com':
-      imageSrc = '/logo.jpg';
+      imageSrc = '/logo.png';
       break;
     case 'Speaker Deck':
       imageSrc = '/logos/speaker-deck.svg';

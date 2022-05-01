@@ -11,13 +11,7 @@ export const Header = ({ isSticky = false, children }: Props): JSX.Element =>
     <header className="container flex z-50 items-center p-4 mx-auto mb-4 text-sm bg-background pc:sticky pc:top-0">
       <Link href="/">
         <a className="flex items-center">
-          <Image
-            className="rounded-full"
-            src="/logo.jpg"
-            alt="logo"
-            width={20}
-            height={20}
-          />
+          <Image src="/logo.png" alt="logo" width={20} height={20} />
           <span className="ml-2">kimromi</span>
         </a>
       </Link>
@@ -28,13 +22,7 @@ export const Header = ({ isSticky = false, children }: Props): JSX.Element =>
       <div className="text-center">
         <Link href="/">
           <a>
-            <Image
-              className="rounded-full"
-              src="/logo.jpg"
-              alt="logo"
-              width={72}
-              height={72}
-            />
+            <Image src="/logo.png" alt="logo" width={72} height={72} />
           </a>
         </Link>
       </div>
