@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const PageTransition = ({ children }: Props): JSX.Element => {
+export const PageTransition: React.FC<Props> = (props) => {
   const { route } = useRouter();
 
   return (
@@ -21,8 +21,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
           opacity: 1,
         },
       }}
-    >
-      {children}
-    </motion.div>
+      {...props}
+    />
   );
 };

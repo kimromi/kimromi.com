@@ -6,7 +6,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const Header = ({ isSticky = false, children }: Props): JSX.Element =>
+export const Header: React.FC<Props> = ({ isSticky = false, children }) =>
   isSticky ? (
     <header className="container flex z-50 items-center p-4 mx-auto mb-4 text-sm bg-background pc:sticky pc:top-0">
       <Link href="/">

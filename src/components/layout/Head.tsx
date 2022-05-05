@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export const Head = ({ title, description, og = {} }: Props): JSX.Element => {
+export const Head: React.FC<Props> = ({ title, description, og = {} }) => {
   const { asPath } = useRouter();
   const canonical = `https://kimromi.com${asPath}`;
 
