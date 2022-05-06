@@ -7,6 +7,9 @@ import { Footer } from '../../components/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/layout/Head';
+import { load } from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css';
 
 type Props = {
   article: Article;
@@ -81,9 +84,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
     queries: { draftKey },
   });
 
+  // syntax highlight
+  const $ = load(data.body);
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+
   return {
     props: {
-      article: data,
+      article: { ...data, body: $.html() },
     },
   };
 };
