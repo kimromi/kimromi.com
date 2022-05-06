@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import { Header } from '../components/Header';
-import { Card } from '../components/Card';
+import { LinkCard } from '../components/LinkCard';
 import { Footer } from '../components/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
 import { Link } from '../components/Link/Link';
@@ -16,28 +16,31 @@ const Home: NextPage = () => (
 
     <PageTransition>
       <Link href="/hello">
-        <Card note="About me">Hello</Card>
+        <LinkCard note="About me">Hello</LinkCard>
       </Link>
       <Link href="/articles">
-        <Card note="Daily blog">Blog</Card>
+        <LinkCard note="Daily blog">Blog</LinkCard>
       </Link>
+      <ExternalLink href="/storybook/index.html">
+        <LinkCard note="Storybook of this site">Storybook</LinkCard>
+      </ExternalLink>
       <ExternalLink href="https://twitter.com/kimromi">
-        <Card note="Daily tweets">Twitter</Card>
+        <LinkCard note="Daily tweets">Twitter</LinkCard>
       </ExternalLink>
       <ExternalLink href="http://github.com/kimromi">
-        <Card note="Developments">GitHub</Card>
+        <LinkCard note="Developments">GitHub</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://zenn.dev/kimromi">
-        <Card note="Technical articles">Zenn</Card>
+        <LinkCard note="Technical articles">Zenn</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://note.com/kimromi_dev">
-        <Card note="Work articles">note</Card>
+        <LinkCard note="Work articles">note</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://speakerdeck.com/kimromi">
-        <Card note="Slides for speaks">Speaker Deck</Card>
+        <LinkCard note="Slides for speaks">Speaker Deck</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
-        <Card note="Old Blog">Hatena Blog</Card>
+        <LinkCard note="Old Blog">Hatena Blog</LinkCard>
       </ExternalLink>
     </PageTransition>
 

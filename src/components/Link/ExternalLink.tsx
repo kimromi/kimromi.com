@@ -3,6 +3,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const ExternalLink = (props: Props): JSX.Element => (
+export const ExternalLink: React.FC<Props> = (props) => (
   <a target="_blank" rel="noreferrer" {...props} />
 );
