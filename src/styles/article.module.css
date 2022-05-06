@@ -1,5 +1,6 @@
 .article {
   @apply leading-8;
+  @apply break-words;
 }
 
 .article h2 {
@@ -55,12 +56,12 @@
 }
 
 .article pre {
-  @apply my-4 p-5 overflow-x-auto;
+  @apply my-4 overflow-x-auto;
   @apply bg-gray-800 rounded-md;
 }
 
 .article pre code {
-  @apply text-sm leading-3;
+  @apply leading-7;
 }
 
 .article iframe {
