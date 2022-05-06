@@ -1,7 +1,10 @@
 import { client } from '../../lib/microCMSClient';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
+export default async function preview(
+  { query }: NextApiRequest,
+  res: NextApiResponse
+) {
   const slug = query.slug as string;
   const draftKey = query.draftKey as string;
 
@@ -18,4 +21,4 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   res.setPreviewData({ slug: id, draftKey });
   res.writeHead(307, { Location: `/articles/${id}` });
   res.end('Preview mode enabled');
-};
+}
