@@ -2,7 +2,7 @@ import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Articles } from '../../lib/microCMSClient';
 import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
+import { LinkCard } from '../../components/LinkCard';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/Link/Link';
@@ -31,13 +31,13 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
             {articles.map((article) => (
               <li key={article.id}>
                 <Link href={`/articles/${article.id}`}>
-                  <Card
+                  <LinkCard
                     note={`${new Date(
                       article.publishedAt
                     ).toLocaleDateString()}`}
                   >
                     {article.title}
-                  </Card>
+                  </LinkCard>
                 </Link>
               </li>
             ))}
