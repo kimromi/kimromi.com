@@ -21,6 +21,9 @@ const Home: NextPage = () => (
       <Link href="/articles">
         <LinkCard note="Daily blog">Blog</LinkCard>
       </Link>
+      <ExternalLink href="/storybook/index.html">
+        <LinkCard note="Storybook of this site">Storybook</LinkCard>
+      </ExternalLink>
       <ExternalLink href="https://twitter.com/kimromi">
         <LinkCard note="Daily tweets">Twitter</LinkCard>
       </ExternalLink>
