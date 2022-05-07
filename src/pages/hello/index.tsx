@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import type { NextPage } from 'next';
-import { Header } from '../../components/Header';
+import { StickyHeader } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Link } from '../../components/Link/Link';
-import { ExternalLink } from '../../components/Link/ExternalLink';
+import { Link, ExternalLink } from '../../components/Link';
 import { Head } from '../../components/layout/Head';
 
 const AboutPage: NextPage = () => {
@@ -12,10 +11,9 @@ const AboutPage: NextPage = () => {
     <>
       <Head title="Hello | kimromi" description="About kimromi" />
 
-      <Header isSticky>
-        <span className="px-2 text-sm text-gray-600">/</span>
+      <StickyHeader>
         <Link href="/hello">Hello</Link>
-      </Header>
+      </StickyHeader>
 
       <PageTransition>
         <main className="container z-0 px-4 mx-auto">
@@ -367,7 +365,8 @@ const AboutPage: NextPage = () => {
         </main>
       </PageTransition>
 
-      <Footer />
+      <Footer showExternalServices />
+
       <script async src="https://note.com/scripts/embed.js" charSet="utf-8" />
     </>
   );
