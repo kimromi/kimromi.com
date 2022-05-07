@@ -14,14 +14,14 @@ const Home: NextPage = () => (
     <Header />
 
     <PageTransition>
-      <Link href="/hello">
-        <LinkCard note="About me">Hello</LinkCard>
+      <Link href="/about">
+        <LinkCard note="Hello!">About</LinkCard>
       </Link>
       <Link href="/articles">
         <LinkCard note="Daily blog">Blog</LinkCard>
       </Link>
       <ExternalLink href="/storybook/index.html">
-        <LinkCard note="Storybook of this site">Storybook</LinkCard>
+        <LinkCard note="Component catalog of this site">Storybook</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
         <LinkCard note="Old Blog">Hatena Blog</LinkCard>

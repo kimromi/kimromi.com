@@ -7,6 +7,7 @@ import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/Link';
 import { Head } from '../../components/layout/Head';
+import { Heading } from '../../components/Heading';
 
 type Props = Articles;
 
@@ -25,7 +26,7 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
 
       <PageTransition>
         <div className="container px-4 mx-auto">
-          <h1 className="mt-12 mb-8 text-4xl">Blog</h1>
+          <Heading level={2}>Blog</Heading>
           <ul>
             {articles.map((article) => (
               <li key={article.id}>
