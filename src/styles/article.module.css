@@ -1,6 +1,6 @@
 .article {
+  @apply mb-12 break-words;
   @apply leading-8;
-  @apply break-words;
 }
 
 .article h2 {

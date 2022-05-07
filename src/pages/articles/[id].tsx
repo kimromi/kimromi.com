@@ -10,19 +10,22 @@ import { Head } from '../../components/layout/Head';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
+import { Heading } from '../../components/Heading';
+import { Tags, Tag } from '../../components/Tag';
 
 type Props = {
   article: Article;
 };
 
-const ArticlePage: NextPage<Props> = ({ article }) => {
-  const description =
-    article.body.replace(/<.+?>/g, '').substring(0, 100) + '...';
+const ArticlePage: NextPage<Props> = ({
+  article: { title, body, publishedAt, category },
+}) => {
+  const description = body.replace(/<.+?>/g, '').substring(0, 100) + '...';
 
   return (
     <>
       <Head
-        title={`${article.title} | kimromi`}
+        title={`${title} | kimromi`}
         description={description}
         og={{ type: 'article' }}
       />
@@ -30,28 +33,29 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
       <StickyHeader>
         <Link href="/articles">Blog</Link>
         <Devider className="hidden pc:inline" />
-        <span className="hidden pc:inline">{article.title}</span>
+        <span className="hidden pc:inline">{title}</span>
       </StickyHeader>
 
       <PageTransition>
         <div className="container px-4 mx-auto mt-16">
           <main>
             <div className="pb-8 mb-12 border-b border-gray-600">
-              <h1 className="pb-2 text-3xl">{article.title}</h1>
-              <span className="text-sm text-gray-600">
-                {new Date(article.publishedAt).toLocaleDateString()}
-              </span>
-              <span className="ml-2 text-sm text-gray-600">
-                {article.category}
-              </span>
+              <p className="mb-4 text-xs">
+                {new Date(publishedAt).toLocaleDateString()}
+              </p>
+              <Heading level={1}>{title}</Heading>
             </div>
 
             <article
               className={styles.article}
-              dangerouslySetInnerHTML={{
-                __html: `${article.body}`,
-              }}
+              dangerouslySetInnerHTML={{ __html: body }}
             />
+
+            {category && (
+              <Tags>
+                <Tag>{category}</Tag>
+              </Tags>
+            )}
           </main>
         </div>
       </PageTransition>

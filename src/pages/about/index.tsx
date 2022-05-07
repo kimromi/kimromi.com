@@ -5,19 +5,66 @@ import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/Link';
 import { Head } from '../../components/layout/Head';
+import { Tags, Tag } from '../../components/Tag';
+import { Heading } from '../../components/Heading';
 
 const AboutPage: NextPage = () => {
   return (
     <>
-      <Head title="Hello | kimromi" description="About kimromi" />
+      <Head title="About | kimromi" description="About kimromi" />
 
       <StickyHeader>
-        <Link href="/hello">Hello</Link>
+        <Link href="/about">About</Link>
       </StickyHeader>
 
       <PageTransition>
         <main className="container z-0 px-4 mx-auto">
-          <div className="text-3xl">Works</div>
+          <Heading level={2}>About me</Heading>
+
+          <div className="leading-8">
+            <p>kimromi(きむろみ)と申します。</p>
+            <p>福岡でソフトウェアエンジニアをしている、2児の父です。</p>
+            <p className="mt-6">
+              アイコンは
+              <s className="mx-1">オープンハウスのロゴとよく間違えられますが</s>
+              ピエト・モンドリアンという画家のコンポジションという抽象画です。色味が好きなのと、なにかと抽象化するのが好きなのでこのアイコンにしていますが、特に美術には興味はないので深くつっこまれるとダンマリします。
+            </p>
+            <p className="mt-6">
+              現在、株式会社マネーフォワードで
+              <ExternalLink
+                href="https://biz.moneyforward.com/expense/"
+                className="underline decoration-1 underline-offset-2"
+              >
+                クラウド経費
+              </ExternalLink>
+              ・
+              <ExternalLink
+                href="https://biz.moneyforward.com/payable/"
+                className="underline decoration-1 underline-offset-2"
+              >
+                クラウド債務支払
+              </ExternalLink>
+              を開発している開発部でテックリードとしてチーム全体の技術的支援や生産性向上の取り組みを中心に仕事をしています。
+            </p>
+          </div>
+
+          <Heading level={3}>好きなもの・こと</Heading>
+          <Tags>
+            <Tag>キャンプ</Tag>
+            <Tag>麻雀</Tag>
+            <Tag>ダーツ</Tag>
+            <Tag>ゴルフ</Tag>
+            <Tag>野球</Tag>
+            <Tag>ミニマル</Tag>
+            <Tag>黒</Tag>
+            <Tag>YouTube</Tag>
+            <Tag>かけ・混ぜごはん</Tag>
+          </Tags>
+
+          <Border />
+
+          <Heading level={2}>Works</Heading>
+
           <Timeline>
             <Event>
               <EventIconWrapper>
