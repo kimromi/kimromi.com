@@ -4,8 +4,7 @@ import { Header } from '../components/Header';
 import { LinkCard } from '../components/LinkCard';
 import { Footer } from '../components/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
-import { Link } from '../components/Link/Link';
-import { ExternalLink } from '../components/Link/ExternalLink';
+import { Link, ExternalLink } from '../components/Link';
 import { Head } from '../components/layout/Head';
 
 const Home: NextPage = () => (

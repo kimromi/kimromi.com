@@ -1,11 +1,11 @@
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Articles } from '../../lib/microCMSClient';
-import { Header } from '../../components/Header';
+import { StickyHeader } from '../../components/Header';
 import { LinkCard } from '../../components/LinkCard';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Link } from '../../components/Link/Link';
+import { Link } from '../../components/Link';
 import { Head } from '../../components/layout/Head';
 
 type Props = Articles;
@@ -19,10 +19,9 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
         og={{ type: 'blog' }}
       />
 
-      <Header isSticky>
-        <span className="px-2 text-sm text-gray-600">/</span>
+      <StickyHeader>
         <Link href="/articles">Blog</Link>
-      </Header>
+      </StickyHeader>
 
       <PageTransition>
         <div className="container px-4 mx-auto">

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
-import { Header } from '../../components/Header';
+import { StickyHeader, Devider } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
@@ -27,12 +27,11 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
         og={{ type: 'article' }}
       />
 
-      <Header isSticky>
-        <span className="px-2 text-gray-600">/</span>
+      <StickyHeader>
         <Link href="/articles">Blog</Link>
-        <span className="hidden px-2 text-gray-600 pc:inline">/</span>
+        <Devider className="hidden pc:inline" />
         <span className="hidden pc:inline">{article.title}</span>
-      </Header>
+      </StickyHeader>
 
       <PageTransition>
         <div className="container px-4 mx-auto mt-16">
