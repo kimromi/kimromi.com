@@ -23,21 +23,6 @@ const Home: NextPage = () => (
       <ExternalLink href="/storybook/index.html">
         <LinkCard note="Storybook of this site">Storybook</LinkCard>
       </ExternalLink>
-      <ExternalLink href="https://twitter.com/kimromi">
-        <LinkCard note="Daily tweets">Twitter</LinkCard>
-      </ExternalLink>
-      <ExternalLink href="http://github.com/kimromi">
-        <LinkCard note="Developments">GitHub</LinkCard>
-      </ExternalLink>
-      <ExternalLink href="https://zenn.dev/kimromi">
-        <LinkCard note="Technical articles">Zenn</LinkCard>
-      </ExternalLink>
-      <ExternalLink href="https://note.com/kimromi_dev">
-        <LinkCard note="Work articles">note</LinkCard>
-      </ExternalLink>
-      <ExternalLink href="https://speakerdeck.com/kimromi">
-        <LinkCard note="Slides for speaks">Speaker Deck</LinkCard>
-      </ExternalLink>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
         <LinkCard note="Old Blog">Hatena Blog</LinkCard>
       </ExternalLink>

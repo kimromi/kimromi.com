@@ -44,7 +44,7 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
         </div>
       </PageTransition>
 
-      <Footer />
+      <Footer showExternalServices />
     </>
   );
 };

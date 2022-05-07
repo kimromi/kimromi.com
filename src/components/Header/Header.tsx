@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ExternalServices } from '../ExternalServices';
 import { Link } from '../Link';
 
 export const Header: React.FC = () => (
@@ -14,6 +15,10 @@ export const Header: React.FC = () => (
 
     <div className="mt-4 text-sm text-center text-gray-600">
       Software engineer in Fukuoka, Japan
+    </div>
+
+    <div className="mt-4">
+      <ExternalServices />
     </div>
   </header>
 );

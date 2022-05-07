@@ -10,3 +10,7 @@ export default {
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
+export const WithExternalServices = Template.bind({});
+WithExternalServices.args = {
+  showExternalServices: true,
+};

@@ -365,7 +365,8 @@ const AboutPage: NextPage = () => {
         </main>
       </PageTransition>
 
-      <Footer />
+      <Footer showExternalServices />
+
       <script async src="https://note.com/scripts/embed.js" charSet="utf-8" />
     </>
   );
