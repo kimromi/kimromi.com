@@ -1,0 +1,63 @@
+.report {
+  @apply py-4 break-words;
+  @apply leading-8;
+  @apply border-t border-gray-700
+}
+
+.report h2 {
+  @apply my-4;
+  @apply font-medium text-2xl;
+  @apply text-gray-100;
+}
+
+.report p {
+  @apply my-2;
+}
+
+.report p br {
+  @apply block;
+  @apply content-[""];
+  @apply pb-6;
+}
+
+.report a {
+  @apply text-blue-500;
+}
+
+.report strong {
+  @apply font-bold;
+}
+
+.report ul {
+  @apply list-disc;
+  @apply my-2 pl-4;
+}
+.report li {
+  @apply font-light;
+}
+.report li::marker {
+  @apply mr-2;
+}
+
+.report img {
+  @apply mt-12 mb-12;
+  @apply rounded-md border border-gray-600;
+}
+
+.report pre {
+  @apply my-4 px-4 py-3 overflow-x-auto;
+  @apply bg-gray-800 rounded-md;
+}
+
+.report pre code {
+  @apply leading-7;
+}
+
+.report p code {
+  @apply p-1;
+  @apply bg-gray-800 rounded-md;
+}
+
+.report iframe {
+  @apply w-full;
+}
