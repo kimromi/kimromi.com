@@ -32,7 +32,7 @@ const ScrapPage: NextPage<Props> = ({
   return (
     <>
       <Head
-        title={`${title} | kimromi`}
+        title={`「${title}」の読書感想 | kimromi`}
         description={`「${title}」の読書感想`}
         og={{ type: 'article' }}
       />
@@ -46,7 +46,7 @@ const ScrapPage: NextPage<Props> = ({
       <PageTransition>
         <div className="container px-4 mx-auto mt-16">
           <main>
-            <Heading level={1}>{title}</Heading>
+            <Heading level={1}>{`「${title}」の読書感想`}</Heading>
             <Tags className="mb-8">
               {tags
                 .filter((tag) => tag != 'Book Report')
