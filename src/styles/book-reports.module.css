@@ -1,7 +1,7 @@
 .report {
   @apply py-4 break-words;
   @apply leading-8;
-  @apply border-t border-gray-700
+  @apply border-t border-gray-700;
 }
 
 .report h2 {
