@@ -66,7 +66,7 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ title, tags }) => (
-  <div className="py-2 pl-4 mb-6 border-l-4 border-gray-300 hover:border-gray-300 duration-150 ease-in pc:border-gray-600">
+  <div className="py-2 pl-4 mb-6 border-l-4 border-tertiary hover:border-tertiary duration-150 ease-in pc:border-secondary">
     <p className="mb-2 text-2xl">{title}</p>
     <Tags>
       {tags.map((tag) => (

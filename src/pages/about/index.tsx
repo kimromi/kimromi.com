@@ -424,7 +424,7 @@ const Year = (props: { children: string }) => (
 );
 const Timeline = (props: { children: React.ReactNode }) => (
   <section
-    className="relative before:absolute before:top-0 before:-bottom-6 mt-6 ml-2 before:w-[2px] before:content-[''] before:bg-gray-600"
+    className="relative before:absolute before:top-0 before:-bottom-6 mt-6 ml-2 before:w-[2px] before:content-[''] before:bg-tertiary"
     {...props}
   />
 );
@@ -433,12 +433,12 @@ const Event = ({ children }: { children: React.ReactNode }) => (
 );
 const EventIconWrapper = (props: { children: React.ReactNode }) => (
   <div
-    className="flex absolute top-1 left-[-15px] justify-center items-center w-8 h-8 bg-background rounded-full border-2 border-gray-300"
+    className="flex absolute top-1 left-[-15px] justify-center items-center w-8 h-8 bg-background rounded-full border-2 border-tertiary"
     {...props}
   />
 );
 const Month = (props: { children: string }) => (
-  <p className="pt-[10px] text-sm text-gray-600" {...props} />
+  <p className="pt-[10px] text-sm text-tertiary" {...props} />
 );
 const EventTitle = (props: { children: React.ReactNode }) => (
   <p className="text-lg font-bold" {...props} />
@@ -447,7 +447,7 @@ const EventDescription = (props: { children: React.ReactNode }) => (
   <p className="mt-1 text-sm" {...props} />
 );
 const EventNote = (props: { children: React.ReactNode }) => (
-  <p className="mt-1 text-sm text-gray-600" {...props} />
+  <p className="mt-1 text-sm text-tertiary" {...props} />
 );
 
 const LinkCard = ({
@@ -475,11 +475,11 @@ const LinkCard = ({
   }
 
   return (
-    <div className="flex items-start py-4 px-6 mt-4 bg-gray-800 hover:bg-gray-700 rounded-md duration-150 ease-in">
+    <div className="flex items-start py-4 px-6 mt-4 bg-secondary border border-secondary hover:border-tertiary rounded-md duration-150 ease-in">
       <Image src={imageSrc} alt="link" width={20} height={20} />
       <div className="ml-2">
         <p>{title}</p>
-        <p className="text-sm text-gray-600">{categoryStr}</p>
+        <p className="text-sm text-tertiary">{categoryStr}</p>
       </div>
     </div>
   );
@@ -489,6 +489,6 @@ const Note = ({ url }: { url: string }) => (
   <iframe src={url} className="mt-4 w-full" height="230" />
 );
 
-const Border = () => <div className="mt-12 border-t border-gray-600" />;
+const Border = () => <div className="mt-12 border-t border-secondary" />;
 
 export default AboutPage;

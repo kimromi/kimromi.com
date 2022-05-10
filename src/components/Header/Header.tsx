@@ -13,7 +13,7 @@ export const Header: React.FC = () => (
       <Link href="/">kimromi</Link>
     </div>
 
-    <div className="mt-4 text-sm text-center text-gray-600">
+    <div className="mt-4 text-sm text-center text-tertiary">
       Software engineer in Fukuoka, Japan
     </div>
 

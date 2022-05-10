@@ -1,13 +1,12 @@
 .report {
   @apply py-4 break-words;
   @apply leading-8;
-  @apply border-t border-gray-700;
+  @apply border-t border-secondary;
 }
 
 .report h2 {
   @apply my-4;
   @apply font-medium text-2xl;
-  @apply text-gray-100;
 }
 
 .report p {
@@ -41,12 +40,12 @@
 
 .report img {
   @apply mt-12 mb-12;
-  @apply rounded-md border border-gray-600;
+  @apply rounded-md border border-secondary;
 }
 
 .report pre {
   @apply my-4 px-4 py-3 overflow-x-auto;
-  @apply bg-gray-800 rounded-md;
+  @apply bg-secondary rounded-md;
 }
 
 .report pre code {
@@ -55,7 +54,7 @@
 
 .report p code {
   @apply p-1;
-  @apply bg-gray-800 rounded-md;
+  @apply bg-secondary rounded-md;
 }
 
 .report iframe {
