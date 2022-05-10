@@ -23,5 +23,5 @@ export const StickyHeader: React.FC<Props> = ({ children }) => (
 );
 
 export const Devider: React.FC<DeviderProps> = ({ className }) => (
-  <span className={`px-2 text-sm text-gray-600 ${className}`}>/</span>
+  <span className={`px-2 text-sm text-tertiary ${className}`}>/</span>
 );

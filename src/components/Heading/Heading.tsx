@@ -17,15 +17,15 @@ export const Heading: React.FC<Props> = ({ level, ...rest }) => {
 
 const H1: React.FC<Omit<Props, 'level'>> = ({ className, ...rest }) => (
   <h1
-    className={`mb-4 text-3xl font-medium text-gray-100 leading-10 ${className}`}
+    className={`mb-4 text-3xl font-medium leading-10 ${className}`}
     {...rest}
   />
 );
 
 const H2: React.FC<Omit<Props, 'level'>> = (props) => (
-  <h2 className="mt-16 mb-8 text-3xl font-medium text-gray-100" {...props} />
+  <h2 className="mt-16 mb-8 text-3xl font-medium" {...props} />
 );
 
 const H3: React.FC<Omit<Props, 'level'>> = (props) => (
-  <h3 className="mt-12 mb-4 text-lg font-bold text-gray-100" {...props} />
+  <h3 className="mt-12 mb-4 text-lg font-bold" {...props} />
 );

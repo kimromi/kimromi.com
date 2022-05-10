@@ -4,5 +4,5 @@
 
 body {
   @apply bg-background;
-  @apply text-gray-300 tracking-wide;
+  @apply text-primary tracking-wide;
 }
