@@ -23,9 +23,9 @@ const H1: React.FC<Omit<Props, 'level'>> = ({ className, ...rest }) => (
 );
 
 const H2: React.FC<Omit<Props, 'level'>> = (props) => (
-  <h2 className="mt-16 mb-8 font-medium text-3xl text-gray-100" {...props} />
+  <h2 className="mt-16 mb-8 text-3xl font-medium text-gray-100" {...props} />
 );
 
 const H3: React.FC<Omit<Props, 'level'>> = (props) => (
-  <h3 className="mt-12 mb-4 font-bold text-lg text-gray-100" {...props} />
+  <h3 className="mt-12 mb-4 text-lg font-bold text-gray-100" {...props} />
 );

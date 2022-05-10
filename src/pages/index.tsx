@@ -20,6 +20,9 @@ const Home: NextPage = () => (
       <Link href="/articles">
         <LinkCard note="Daily blog">Blog</LinkCard>
       </Link>
+      <Link href="/book-reports">
+        <LinkCard note="Impressions of reading a book">Book Reports</LinkCard>
+      </Link>
       <ExternalLink href="/storybook/index.html">
         <LinkCard note="Component catalog of this site">Storybook</LinkCard>
       </ExternalLink>
