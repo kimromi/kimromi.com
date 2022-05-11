@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 const Color: React.FC = () => (
-  <div className="w-screen h-screen p-4 bg-white">
-    <div className="p-4 bg-primary text-black">Primary</div>
+  <div className="p-4 w-screen h-screen bg-white">
+    <div className="p-4 text-black bg-primary">Primary</div>
     <div className="p-4 bg-secondary">Secondary</div>
     <div className="p-4 bg-tertiary">Tertiary</div>
     <div className="p-4 bg-background">Background</div>
