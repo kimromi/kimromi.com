@@ -32,15 +32,15 @@ const AboutPage: NextPage = () => {
             <p className="mt-6">
               現在、株式会社マネーフォワードで
               <ExternalLink
+                underline
                 href="https://biz.moneyforward.com/expense/"
-                className="underline decoration-1 underline-offset-2"
               >
                 クラウド経費
               </ExternalLink>
               ・
               <ExternalLink
+                underline
                 href="https://biz.moneyforward.com/payable/"
-                className="underline decoration-1 underline-offset-2"
               >
                 クラウド債務支払
               </ExternalLink>

@@ -10,6 +10,7 @@ import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
 import styles from '../../styles/book-reports.module.css';
 import { Tag, Tags } from '../../components/Tag';
+import { ExternalLink } from '../../components/Link';
 
 type Props = {
   issue: Issue;
@@ -17,7 +18,7 @@ type Props = {
 };
 
 const ScrapPage: NextPage<Props> = ({
-  issue: { title, body, labels },
+  issue: { number, title, body, labels },
   comments,
 }) => {
   let tags: string[] = [];
@@ -73,6 +74,16 @@ const ScrapPage: NextPage<Props> = ({
                 )
             )}
           </main>
+
+          <p className="mt-16 text-sm text-tertiary">
+            Based on{' '}
+            <ExternalLink
+              underline
+              href={`https://github.com/kimromi/scraps/issues/${number}`}
+            >
+              https://github.com/kimromi/scraps/issues/{number}
+            </ExternalLink>
+          </p>
         </div>
       </PageTransition>
 
