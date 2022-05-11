@@ -32,15 +32,15 @@ const AboutPage: NextPage = () => {
             <p className="mt-6">
               現在、株式会社マネーフォワードで
               <ExternalLink
+                underline
                 href="https://biz.moneyforward.com/expense/"
-                className="underline decoration-1 underline-offset-2"
               >
                 クラウド経費
               </ExternalLink>
               ・
               <ExternalLink
+                underline
                 href="https://biz.moneyforward.com/payable/"
-                className="underline decoration-1 underline-offset-2"
               >
                 クラウド債務支払
               </ExternalLink>
@@ -475,7 +475,7 @@ const LinkCard = ({
   }
 
   return (
-    <div className="flex items-start py-4 px-6 mt-4 bg-secondary border border-secondary hover:border-tertiary rounded-md duration-150 ease-in">
+    <div className="flex items-start py-4 px-6 mt-4 bg-secondary rounded-md border border-secondary hover:border-tertiary duration-150 ease-in">
       <Image src={imageSrc} alt="link" width={20} height={20} />
       <div className="ml-2">
         <p>{title}</p>

@@ -1,7 +1,7 @@
 import { StickyHeader } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Link } from '../../components/Link';
+import { ExternalLink, Link } from '../../components/Link';
 import { Head } from '../../components/layout/Head';
 import { Heading } from '../../components/Heading';
 import { getIssues } from '../../lib/githubClient';
@@ -52,6 +52,16 @@ const BookReportsPage: NextPage<Props> = ({ issues }) => {
               );
             })}
           </ul>
+
+          <p className="mt-16 text-sm text-tertiary">
+            Based on{' '}
+            <ExternalLink
+              underline
+              href="https://github.com/kimromi/scraps/issues"
+            >
+              https://github.com/kimromi/scraps/issues
+            </ExternalLink>
+          </p>
         </div>
       </PageTransition>
 
