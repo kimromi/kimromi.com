@@ -5,8 +5,13 @@
 }
 
 .report h2 {
-  @apply my-4;
+  @apply mt-8 mb-4;
   @apply font-medium text-2xl;
+}
+
+.report h3 {
+  @apply mt-8 mb-4;
+  @apply font-medium text-xl;
 }
 
 .report p {
