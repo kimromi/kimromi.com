@@ -3,7 +3,7 @@ import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
 import { StickyHeader, Devider } from '../../components/layout/Header';
-import { Footer } from '../../components/Footer';
+import { Footer } from '../../components/layout/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/layout/Head';

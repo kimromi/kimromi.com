@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import { Header } from '../components/layout/Header';
 import { LinkCard } from '../components/ui/LinkCard';
-import { Footer } from '../components/Footer';
+import { Footer } from '../components/layout/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
 import { Link, ExternalLink } from '../components/ui/Link';
 import { Head } from '../components/layout/Head';
