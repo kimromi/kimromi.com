@@ -6,7 +6,7 @@ import { StickyHeader, Devider } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Head } from '../../components/layout/Head';
+import { Head } from '../../components/head';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';

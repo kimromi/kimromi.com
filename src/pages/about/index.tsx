@@ -4,7 +4,7 @@ import { StickyHeader } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/ui/Link';
-import { Head } from '../../components/layout/Head';
+import { Head } from '../../components/head';
 import { Tags, Tag } from '../../components/ui/Tag';
 import { Heading } from '../../components/ui/Heading';
 

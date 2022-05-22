@@ -6,7 +6,7 @@ import { LinkCard } from '../../components/ui/LinkCard';
 import { Footer } from '../../components/layout/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/ui/Link';
-import { Head } from '../../components/layout/Head';
+import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
 
 type Props = Articles;

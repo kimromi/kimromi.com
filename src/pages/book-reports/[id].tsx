@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { StickyHeader, Devider } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Head } from '../../components/layout/Head';
+import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import { marked } from 'marked';
