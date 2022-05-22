@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ExternalLink } from '../ui/Link';
+import { ExternalLink } from '../Link';
 
 export const ExternalServices: React.FC = () => (
   <div className="flex gap-4 justify-center">

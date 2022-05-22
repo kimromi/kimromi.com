@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ExternalServices } from '../ExternalServices';
+import { ExternalServices } from '../ui/ExternalServices';
 import { Link } from '../ui/Link';
 
 export const Header: React.FC = () => (
