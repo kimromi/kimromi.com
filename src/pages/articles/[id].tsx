@@ -2,16 +2,16 @@ import Link from 'next/link';
 import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { Article } from '../../lib/microCMSClient';
-import { StickyHeader, Devider } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { StickyHeader, Devider } from '../../components/layout/Header';
+import { Footer } from '../../components/layout/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Head } from '../../components/layout/Head';
+import { Head } from '../../components/head';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
-import { Heading } from '../../components/Heading';
-import { Tags, Tag } from '../../components/Tag';
+import { Heading } from '../../components/ui/Heading';
+import { Tags, Tag } from '../../components/ui/Tag';
 
 type Props = {
   article: Article;

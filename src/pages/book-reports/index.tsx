@@ -1,13 +1,13 @@
-import { StickyHeader } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { StickyHeader } from '../../components/layout/Header';
+import { Footer } from '../../components/layout/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { ExternalLink, Link } from '../../components/Link';
-import { Head } from '../../components/layout/Head';
-import { Heading } from '../../components/Heading';
+import { Link, ExternalLink } from '../../components/ui/Link';
+import { Head } from '../../components/head';
+import { Heading } from '../../components/ui/Heading';
 import { getIssues } from '../../lib/githubClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Issues } from '../../lib/githubClient';
-import { Tags, Tag } from '../../components/Tag';
+import { Tags, Tag } from '../../components/ui/Tag';
 
 type Props = {
   issues: Issues;

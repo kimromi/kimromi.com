@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ExternalServices } from './ExternalServices';
 
 export default {
-  title: 'components/ExternalServices',
+  title: 'ui/ExternalServices',
   component: ExternalServices,
 } as ComponentMeta<typeof ExternalServices>;
 

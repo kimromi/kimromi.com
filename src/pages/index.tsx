@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import { Header } from '../components/Header';
-import { LinkCard } from '../components/LinkCard';
-import { Footer } from '../components/Footer';
+import { Header } from '../components/layout/Header';
+import { LinkCard } from '../components/ui/LinkCard';
+import { Footer } from '../components/layout/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
-import { Link, ExternalLink } from '../components/Link';
-import { Head } from '../components/layout/Head';
+import { Link, ExternalLink } from '../components/ui/Link';
+import { Head } from '../components/head';
 
 const Home: NextPage = () => (
   <div className="container px-4 mx-auto">

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { ExternalServices } from '../ExternalServices';
-import { Link } from '../Link';
+import { ExternalServices } from '../../ui/ExternalServices';
+import { Link } from '../../ui/Link';
 
 export const Header: React.FC = () => (
   <header className="flex flex-col justify-center mt-24 mb-20">

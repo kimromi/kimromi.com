@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { StickyHeader, Devider } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { StickyHeader, Devider } from '../../components/layout/Header';
+import { Footer } from '../../components/layout/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Head } from '../../components/layout/Head';
-import { Heading } from '../../components/Heading';
+import { Head } from '../../components/head';
+import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
 import styles from '../../styles/book-reports.module.css';
-import { Tag, Tags } from '../../components/Tag';
-import { ExternalLink } from '../../components/Link';
+import { Tags, Tag } from '../../components/ui/Tag';
+import { ExternalLink } from '../../components/ui/Link';
 
 type Props = {
   issue: Issue;

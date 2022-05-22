@@ -4,7 +4,7 @@ import { Tag } from './Tag';
 import { Tags } from './Tags';
 
 export default {
-  title: 'components/Tag',
+  title: 'ui/Tag',
   component: Tag,
 } as ComponentMeta<typeof Tag>;
 
