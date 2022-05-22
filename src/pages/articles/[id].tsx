@@ -10,7 +10,7 @@ import { Head } from '../../components/layout/Head';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
-import { Heading } from '../../components/Heading';
+import { Heading } from '../../components/ui/Heading';
 import { Tags, Tag } from '../../components/ui/Tag';
 
 type Props = {

@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/layout/Head';
-import { Heading } from '../../components/Heading';
+import { Heading } from '../../components/ui/Heading';
 import { getIssues } from '../../lib/githubClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Issues } from '../../lib/githubClient';

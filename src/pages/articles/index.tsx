@@ -7,7 +7,7 @@ import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/ui/Link';
 import { Head } from '../../components/layout/Head';
-import { Heading } from '../../components/Heading';
+import { Heading } from '../../components/ui/Heading';
 
 type Props = Articles;
 

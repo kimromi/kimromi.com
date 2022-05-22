@@ -4,7 +4,7 @@ import { StickyHeader, Devider } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/layout/Head';
-import { Heading } from '../../components/Heading';
+import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';

@@ -6,7 +6,7 @@ import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/layout/Head';
 import { Tags, Tag } from '../../components/ui/Tag';
-import { Heading } from '../../components/Heading';
+import { Heading } from '../../components/ui/Heading';
 
 const AboutPage: NextPage = () => {
   return (
