@@ -2,7 +2,7 @@ import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Articles } from '../../lib/microCMSClient';
 import { StickyHeader } from '../../components/Header';
-import { LinkCard } from '../../components/LinkCard';
+import { LinkCard } from '../../components/ui/LinkCard';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link } from '../../components/Link';
