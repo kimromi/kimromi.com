@@ -1,7 +1,7 @@
 import { StickyHeader } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { ExternalLink, Link } from '../../components/Link';
+import { Link, ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/layout/Head';
 import { Heading } from '../../components/Heading';
 import { getIssues } from '../../lib/githubClient';

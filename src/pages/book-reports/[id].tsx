@@ -10,7 +10,7 @@ import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
 import styles from '../../styles/book-reports.module.css';
 import { Tags, Tag } from '../../components/ui/Tag';
-import { ExternalLink } from '../../components/Link';
+import { ExternalLink } from '../../components/ui/Link';
 
 type Props = {
   issue: Issue;

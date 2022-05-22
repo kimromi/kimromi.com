@@ -5,7 +5,7 @@ import { StickyHeader } from '../../components/Header';
 import { LinkCard } from '../../components/ui/LinkCard';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
-import { Link } from '../../components/Link';
+import { Link } from '../../components/ui/Link';
 import { Head } from '../../components/layout/Head';
 import { Heading } from '../../components/Heading';
 
