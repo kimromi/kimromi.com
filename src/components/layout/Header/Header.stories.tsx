@@ -4,7 +4,7 @@ import { Header } from './Header';
 import { StickyHeader } from './StickyHeader';
 
 export default {
-  title: 'components/Header',
+  title: 'layout/Header',
   component: Header,
 } as ComponentMeta<typeof Header>;
 
