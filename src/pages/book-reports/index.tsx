@@ -1,4 +1,4 @@
-import { StickyHeader } from '../../components/Header';
+import { StickyHeader } from '../../components/layout/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/ui/Link';

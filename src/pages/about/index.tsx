@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { NextPage } from 'next';
-import { StickyHeader } from '../../components/Header';
+import { StickyHeader } from '../../components/layout/Header';
 import { Footer } from '../../components/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Link, ExternalLink } from '../../components/ui/Link';

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import { Header } from '../components/Header';
+import { Header } from '../components/layout/Header';
 import { LinkCard } from '../components/ui/LinkCard';
 import { Footer } from '../components/Footer';
 import { PageTransition } from '../components/layout/PageTransition';
