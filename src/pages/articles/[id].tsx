@@ -11,7 +11,7 @@ import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import { Heading } from '../../components/Heading';
-import { Tags, Tag } from '../../components/Tag';
+import { Tags, Tag } from '../../components/ui/Tag';
 
 type Props = {
   article: Article;

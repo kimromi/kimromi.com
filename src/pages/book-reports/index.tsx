@@ -7,7 +7,7 @@ import { Heading } from '../../components/Heading';
 import { getIssues } from '../../lib/githubClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Issues } from '../../lib/githubClient';
-import { Tags, Tag } from '../../components/Tag';
+import { Tags, Tag } from '../../components/ui/Tag';
 
 type Props = {
   issues: Issues;

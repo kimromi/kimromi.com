@@ -9,7 +9,7 @@ import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
 import styles from '../../styles/book-reports.module.css';
-import { Tag, Tags } from '../../components/Tag';
+import { Tags, Tag } from '../../components/ui/Tag';
 import { ExternalLink } from '../../components/Link';
 
 type Props = {
