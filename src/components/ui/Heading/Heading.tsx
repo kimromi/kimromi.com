@@ -17,7 +17,7 @@ export const Heading: React.FC<Props> = ({ level, ...rest }) => {
 
 const H1: React.FC<Omit<Props, 'level'>> = ({ className, ...rest }) => (
   <h1
-    className={`mb-4 text-3xl font-medium leading-10 ${className}`}
+    className={`mb-4 text-3xl font-medium leading-10 break-all ${className}`}
     {...rest}
   />
 );

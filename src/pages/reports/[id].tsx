@@ -8,7 +8,7 @@ import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
-import styles from '../../styles/book-reports.module.css';
+import styles from '../../styles/reports.module.css';
 import { Tags, Tag } from '../../components/ui/Tag';
 import { ExternalLink } from '../../components/ui/Link';
 
@@ -17,7 +17,7 @@ type Props = {
   comments: Comments;
 };
 
-const ScrapPage: NextPage<Props> = ({
+const ReportPage: NextPage<Props> = ({
   issue: { number, title, body, labels },
   comments,
 }) => {
@@ -33,13 +33,13 @@ const ScrapPage: NextPage<Props> = ({
   return (
     <>
       <Head
-        title={`「${title}」の読書感想 | kimromi`}
-        description={`「${title}」の読書感想`}
+        title={`「${title}」を読んだ感想 | kimromi`}
+        description={`「${title}」を読んだ感想`}
         og={{ type: 'article' }}
       />
 
       <StickyHeader>
-        <Link href="/book-reports">Book Reports</Link>
+        <Link href="/reports">Reports</Link>
         <Devider className="hidden pc:inline" />
         <span className="hidden pc:inline">{title}</span>
       </StickyHeader>
@@ -47,10 +47,10 @@ const ScrapPage: NextPage<Props> = ({
       <PageTransition>
         <div className="container px-4 mx-auto mt-16">
           <main>
-            <Heading level={1}>{`「${title}」の読書感想`}</Heading>
+            <Heading level={1}>{`「${title}」を読んだ感想`}</Heading>
             <Tags className="mb-8">
               {tags
-                .filter((tag) => tag != 'Book Report')
+                .filter((tag) => tag != 'Report')
                 .map((tag) => (
                   <Tag key={tag}>{tag}</Tag>
                 ))}
@@ -93,9 +93,9 @@ const ScrapPage: NextPage<Props> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const issues = await getIssues({ labels: 'Book Report' });
+  const issues = await getIssues({ labels: 'Report' });
 
-  const paths = issues.map((issue) => `/book-reports/${issue.number}`);
+  const paths = issues.map((issue) => `/reports/${issue.number}`);
   return { paths, fallback: false };
 };
 
@@ -117,4 +117,4 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   };
 };
 
-export default ScrapPage;
+export default ReportPage;

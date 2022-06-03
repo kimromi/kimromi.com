@@ -13,22 +13,22 @@ type Props = {
   issues: Issues;
 };
 
-const BookReportsPage: NextPage<Props> = ({ issues }) => {
+const ReportsPage: NextPage<Props> = ({ issues }) => {
   return (
     <>
       <Head
-        title="Book Reports | kimromi"
-        description="読書感想"
+        title="Reports | kimromi"
+        description="読書や記事を呼んでの感想"
         og={{ type: 'blog' }}
       />
 
       <StickyHeader>
-        <Link href="/book-reports">Book Reports</Link>
+        <Link href="/reports">Reports</Link>
       </StickyHeader>
 
       <PageTransition>
         <div className="container px-4 mx-auto">
-          <Heading level={2}>Book Reports</Heading>
+          <Heading level={2}>Reports</Heading>
           <ul>
             {issues.map(({ node_id, number, title, labels }) => {
               let tags: string[] = [];
@@ -42,10 +42,10 @@ const BookReportsPage: NextPage<Props> = ({ issues }) => {
 
               return (
                 <li key={node_id}>
-                  <Link href={`/book-reports/${number}`}>
+                  <Link href={`/reports/${number}`}>
                     <Card
                       title={title}
-                      tags={tags.filter((tag) => tag != 'Book Report')}
+                      tags={tags.filter((tag) => tag !== 'Report')}
                     />
                   </Link>
                 </li>
@@ -87,7 +87,7 @@ const Card: React.FC<CardProps> = ({ title, tags }) => (
 );
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const issues = await getIssues({ labels: 'Book Report' });
+  const issues = await getIssues({ labels: 'Report' });
 
   return {
     props: {
@@ -96,4 +96,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default BookReportsPage;
+export default ReportsPage;
