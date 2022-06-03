@@ -15,19 +15,19 @@ const Home: NextPage = () => (
 
     <PageTransition>
       <Link href="/about">
-        <LinkCard note="Hello!">About</LinkCard>
+        <LinkCard note="こんにちは！">About</LinkCard>
       </Link>
       <Link href="/articles">
-        <LinkCard note="Daily blog">Blog</LinkCard>
+        <LinkCard note="ブログ">Blog</LinkCard>
       </Link>
-      <Link href="/book-reports">
-        <LinkCard note="Impressions of reading a book">Book Reports</LinkCard>
+      <Link href="/reports">
+        <LinkCard note="書籍や記事を読んだ感想">Reports</LinkCard>
       </Link>
       <ExternalLink href="/storybook/index.html">
-        <LinkCard note="Component catalog of this site">Storybook</LinkCard>
+        <LinkCard note="コンポーネントカタログ">Storybook</LinkCard>
       </ExternalLink>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
-        <LinkCard note="Old Blog">Hatena Blog</LinkCard>
+        <LinkCard note="旧ブログ">Hatena Blog</LinkCard>
       </ExternalLink>
     </PageTransition>
 

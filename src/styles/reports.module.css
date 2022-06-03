@@ -1,5 +1,5 @@
 .report {
-  @apply py-4 break-words;
+  @apply py-4 break-all;
   @apply leading-8;
   @apply border-t border-secondary;
 }
