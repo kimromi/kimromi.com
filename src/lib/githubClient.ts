@@ -10,6 +10,7 @@ export const getIssues = async ({ labels }: { labels?: string }) => {
     owner,
     repo: 'scraps',
     per_page: 100,
+    state: 'all', // open and closed
     labels,
   });
 };
