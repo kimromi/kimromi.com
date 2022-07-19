@@ -33,8 +33,8 @@ const ReportPage: NextPage<Props> = ({
   return (
     <>
       <Head
-        title={`「${title}」を読んだ感想 | kimromi`}
-        description={`「${title}」を読んだ感想`}
+        title={`「${title}」の感想 | kimromi`}
+        description={`「${title}」の感想`}
         og={{ type: 'article' }}
       />
 
@@ -47,7 +47,7 @@ const ReportPage: NextPage<Props> = ({
       <PageTransition>
         <div className="container px-4 mx-auto mt-16">
           <main>
-            <Heading level={1}>{`「${title}」を読んだ感想`}</Heading>
+            <Heading level={1}>{`「${title}」の感想`}</Heading>
             <Tags className="mb-8">
               {tags
                 .filter((tag) => tag != 'Report')
