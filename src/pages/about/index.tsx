@@ -18,7 +18,7 @@ const AboutPage: NextPage = () => {
       </StickyHeader>
 
       <PageTransition>
-        <main className="container z-0 px-4 mx-auto">
+        <main className="container z-0 mx-auto px-4">
           <Heading level={2}>About me</Heading>
 
           <div className="leading-8">
@@ -439,16 +439,16 @@ const AboutPage: NextPage = () => {
 
 const Timeline = (props: { children: React.ReactNode }) => (
   <section
-    className="relative before:absolute before:top-0 before:-bottom-6 mt-6 ml-2 before:w-[2px] before:content-[''] before:bg-tertiary"
+    className="relative mt-6 ml-2 before:absolute before:top-0 before:-bottom-6 before:w-[2px] before:bg-tertiary before:content-['']"
     {...props}
   />
 );
 const Event = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative pl-7 mt-8">{children}</div>
+  <div className="relative mt-8 pl-7">{children}</div>
 );
 const EventIconWrapper = (props: { children: React.ReactNode }) => (
   <div
-    className="flex absolute top-1 left-[-15px] justify-center items-center w-8 h-8 bg-background rounded-full border-2 border-tertiary"
+    className="absolute top-1 left-[-15px] flex h-8 w-8 items-center justify-center rounded-full border-2 border-tertiary bg-background"
     {...props}
   />
 );
@@ -490,7 +490,7 @@ const LinkCard = ({
   }
 
   return (
-    <div className="flex items-start py-4 px-6 mt-4 bg-secondary rounded-md border border-secondary hover:border-tertiary duration-150 ease-in">
+    <div className="mt-4 flex items-start rounded-md border border-secondary bg-secondary py-4 px-6 duration-150 ease-in hover:border-tertiary">
       <Image src={imageSrc} alt="link" width={20} height={20} />
       <div className="ml-2">
         <p>{title}</p>

@@ -37,9 +37,9 @@ const ArticlePage: NextPage<Props> = ({
       </StickyHeader>
 
       <PageTransition>
-        <div className="container px-4 mx-auto mt-16">
+        <div className="container mx-auto mt-16 px-4">
           <main>
-            <div className="pb-8 mb-12 border-b border-tertiary">
+            <div className="mb-12 border-b border-tertiary pb-8">
               <p className="mb-4 text-xs">
                 {new Date(publishedAt).toLocaleDateString()}
               </p>

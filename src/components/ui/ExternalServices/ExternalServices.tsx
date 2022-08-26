@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ExternalLink } from '../Link';
 
 export const ExternalServices: React.FC = () => (
-  <div className="flex gap-4 justify-center">
+  <div className="flex justify-center gap-4">
     <ExternalLink href="https://twitter.com/kimromi">
       <Image src="/logos/twitter.svg" alt="twitter" width={20} height={20} />
     </ExternalLink>
