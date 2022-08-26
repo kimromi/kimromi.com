@@ -10,7 +10,7 @@ type DeviderProps = {
 };
 
 export const StickyHeader: React.FC<Props> = ({ children }) => (
-  <header className="container flex z-50 items-center p-4 mx-auto mb-4 text-sm bg-background pc:sticky pc:top-0">
+  <header className="container z-50 mx-auto mb-4 flex items-center bg-background p-4 text-sm pc:sticky pc:top-0">
     <Link href="/">
       <a className="flex items-center">
         <Image src="/logo.png" alt="logo" width={20} height={20} />

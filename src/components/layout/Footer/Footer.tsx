@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const Footer: React.FC<Props> = ({ showExternalServices = false }) => (
-  <footer className="mt-20 mb-8 text-xs text-center text-tertiary">
+  <footer className="mt-20 mb-8 text-center text-xs text-tertiary">
     {showExternalServices && (
       <div className="mb-2">
         <ExternalServices />

@@ -8,7 +8,7 @@ import { Link, ExternalLink } from '../components/ui/Link';
 import { Head } from '../components/head';
 
 const Home: NextPage = () => (
-  <div className="container px-4 mx-auto">
+  <div className="container mx-auto px-4">
     <Head title="kimromi" description="Portfolio site of kimromi" />
 
     <Header />

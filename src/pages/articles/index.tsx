@@ -25,7 +25,7 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
       </StickyHeader>
 
       <PageTransition>
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <Heading level={2}>Blog</Heading>
           <ul>
             {articles.map((article) => (

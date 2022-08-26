@@ -45,7 +45,7 @@ const ReportPage: NextPage<Props> = ({
       </StickyHeader>
 
       <PageTransition>
-        <div className="container px-4 mx-auto mt-16">
+        <div className="container mx-auto mt-16 px-4">
           <main>
             <Heading level={1}>{`「${title}」の感想`}</Heading>
             <Tags className="mb-8">

@@ -27,7 +27,7 @@ const ReportsPage: NextPage<Props> = ({ issues }) => {
       </StickyHeader>
 
       <PageTransition>
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <Heading level={2}>Reports</Heading>
           <ul>
             {issues.map(({ node_id, number, title, labels }) => {
@@ -76,7 +76,7 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ title, tags }) => (
-  <div className="py-2 pl-4 mb-6 border-l-4 border-tertiary hover:border-tertiary duration-150 ease-in pc:border-secondary">
+  <div className="mb-6 border-l-4 border-tertiary py-2 pl-4 duration-150 ease-in hover:border-tertiary pc:border-secondary">
     <p className="mb-2 text-2xl">{title}</p>
     <Tags>
       {tags.map((tag) => (
