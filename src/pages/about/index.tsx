@@ -22,7 +22,7 @@ const AboutPage: NextPage = () => {
           <Heading level={2}>About me</Heading>
 
           <div className="leading-8">
-            <p>kimromi(きむろみ)と申します。</p>
+            <p>kimromi (きむろみ)と申します。</p>
             <p>福岡でソフトウェアエンジニアをしている、2児の父です。</p>
             <p className="mt-6">
               アイコンは
@@ -44,7 +44,8 @@ const AboutPage: NextPage = () => {
               >
                 クラウド債務支払
               </ExternalLink>
-              を開発している開発部でテックリードとしてチーム全体の技術的支援や生産性向上の取り組みを中心に仕事をしています。
+              を開発している開発部で Enabling
+              グループのエンジニアとしてチーム全体の技術的支援や生産性向上の取り組みを中心に仕事をしています。
             </p>
           </div>
 
@@ -66,6 +67,23 @@ const AboutPage: NextPage = () => {
           <Heading level={2}>Works</Heading>
 
           <Timeline>
+            <Event>
+              <EventIconWrapper>
+                <Image
+                  src="/about/role.png"
+                  alt="change role"
+                  width={16}
+                  height={16}
+                />
+              </EventIconWrapper>
+              <Month>2022/04</Month>
+              <EventTitle>Enabling グループ</EventTitle>
+              <EventDescription>チームリーダー</EventDescription>
+              <EventNote>
+                アーキテクト, 生産性向上, フロントエンド, インフラ, SRE
+              </EventNote>
+            </Event>
+
             <Event>
               <EventIconWrapper>
                 <Image
@@ -419,9 +437,6 @@ const AboutPage: NextPage = () => {
   );
 };
 
-const Year = (props: { children: string }) => (
-  <header className="mb-4 text-2xl" {...props} />
-);
 const Timeline = (props: { children: React.ReactNode }) => (
   <section
     className="relative before:absolute before:top-0 before:-bottom-6 mt-6 ml-2 before:w-[2px] before:content-[''] before:bg-tertiary"
