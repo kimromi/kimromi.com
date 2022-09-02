@@ -62,6 +62,12 @@
   @apply bg-secondary rounded-md;
 }
 
+.report blockquote p {
+  @apply my-6 pl-4;
+  @apply border-l-2 border-tertiary;
+  @apply text-tertiary;
+}
+
 .report iframe {
   @apply w-full;
 }
