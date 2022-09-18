@@ -8,7 +8,7 @@ const owner = 'kimromi';
 export const getIssues = async ({ labels }: { labels?: string }) => {
   return await client.paginate(client.rest.issues.listForRepo, {
     owner,
-    repo: 'scraps',
+    repo: 'notes',
     per_page: 100,
     state: 'all', // open and closed
     labels,
@@ -18,7 +18,7 @@ export const getIssues = async ({ labels }: { labels?: string }) => {
 export const getIssue = async ({ issueNumber }: { issueNumber: number }) => {
   return await client.rest.issues.get({
     owner,
-    repo: 'scraps',
+    repo: 'notes',
     issue_number: issueNumber,
   });
 };
@@ -36,7 +36,7 @@ export const getIssueComments = async ({
 }) => {
   return await client.rest.issues.listComments({
     owner,
-    repo: 'scraps',
+    repo: 'notes',
     issue_number: issueNumber,
   });
 };
