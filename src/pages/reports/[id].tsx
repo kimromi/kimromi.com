@@ -79,9 +79,9 @@ const ReportPage: NextPage<Props> = ({
             Based on{' '}
             <ExternalLink
               underline
-              href={`https://github.com/kimromi/scraps/issues/${number}`}
+              href={`https://github.com/kimromi/notes/issues/${number}`}
             >
-              https://github.com/kimromi/scraps/issues/{number}
+              https://github.com/kimromi/notes/issues/{number}
             </ExternalLink>
           </p>
         </div>
