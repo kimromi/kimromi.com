@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { client } from '../../lib/microCMSClient';
+import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
+import type { Issue, Comments } from '../../lib/githubClient';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import type { Article } from '../../lib/microCMSClient';
 import { StickyHeader, Devider } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import styles from '../../styles/article.module.css';
@@ -9,18 +9,24 @@ import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/head';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
+import { marked } from 'marked';
 import 'highlight.js/styles/atom-one-dark.css';
 import { Heading } from '../../components/ui/Heading';
-import { Tags, Tag } from '../../components/ui/Tag';
+import React from 'react';
+import { ExternalLink } from '../../components/ui/Link';
 
 type Props = {
-  article: Article;
+  issue: Issue;
+  comments: Comments;
 };
 
 const ArticlePage: NextPage<Props> = ({
-  article: { title, body, publishedAt, category },
+  issue: { number, title: issueTitle, body },
+  comments,
 }) => {
-  const description = body.replace(/<.+?>/g, '').substring(0, 100) + '...';
+  const [date, title] = issueTitle.split(' - ');
+  const description =
+    (body || '').replace(/<.+?>/g, '').substring(0, 100) + '...';
 
   return (
     <>
@@ -40,22 +46,39 @@ const ArticlePage: NextPage<Props> = ({
         <div className="container mx-auto mt-16 px-4">
           <main>
             <div className="mb-12 border-b border-tertiary pb-8">
-              <p className="mb-4 text-xs">
-                {new Date(publishedAt).toLocaleDateString()}
-              </p>
+              <p className="mb-4 text-xs">{date}</p>
               <Heading level={1}>{title}</Heading>
             </div>
 
-            <article
-              className={styles.article}
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
+            <article className={styles.article}>
+              {body && (
+                <section
+                  dangerouslySetInnerHTML={{ __html: parseHtml(body) }}
+                />
+              )}
 
-            {category && (
-              <Tags>
-                <Tag>{category}</Tag>
-              </Tags>
-            )}
+              {comments.map(
+                ({ node_id, body }) =>
+                  body && (
+                    <section
+                      key={node_id}
+                      dangerouslySetInnerHTML={{
+                        __html: parseHtml(body),
+                      }}
+                    />
+                  )
+              )}
+            </article>
+
+            <p className="mt-16 text-sm text-tertiary">
+              Based on{' '}
+              <ExternalLink
+                underline
+                href={`https://github.com/kimromi/notes/issues/${number}`}
+              >
+                https://github.com/kimromi/notes/issues/{number}
+              </ExternalLink>
+            </p>
           </main>
         </div>
       </PageTransition>
@@ -66,40 +89,42 @@ const ArticlePage: NextPage<Props> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await client.get({
-    endpoint: 'articles',
-    queries: { limit: 1000, orders: '-publishedAt' },
-  });
+  const issues = await getIssues({ labels: 'Blog' });
 
-  const paths = data.contents.map(
-    (content: Article) => `/articles/${content.id}`
-  );
+  const paths = issues.map((issue) => `/articles/${issue.number}`);
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id = context.params?.id as string;
-  const draftKey = (context?.previewData as { draftKey?: string })?.draftKey;
+  const id = context.params?.id;
 
-  const data = await client.get({
-    endpoint: 'articles',
-    contentId: id,
-    queries: { draftKey },
+  const issue = await getIssue({
+    issueNumber: Number(id),
   });
-
-  // syntax highlight
-  const $ = load(data.body);
-  $('pre code').each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text());
-    $(elm).html(result.value);
-    $(elm).addClass('hljs');
+  const comments = await getIssueComments({
+    issueNumber: Number(id),
   });
 
   return {
     props: {
-      article: { ...data, body: $.html() },
+      issue: issue.data,
+      comments: comments.data,
     },
   };
 };
 
 export default ArticlePage;
+
+function parseHtml(markdownBody?: string | null) {
+  if (!markdownBody) return '';
+
+  // syntax highlight & parse HTML
+  const html = marked.parse(markdownBody);
+  const $ = load(html);
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+  return $.html();
+}

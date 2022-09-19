@@ -1,6 +1,6 @@
-import { client } from '../../lib/microCMSClient';
 import type { NextPage, GetStaticProps } from 'next';
-import type { Articles } from '../../lib/microCMSClient';
+import { getIssues } from '../../lib/githubClient';
+import type { Issues } from '../../lib/githubClient';
 import { StickyHeader } from '../../components/layout/Header';
 import { LinkCard } from '../../components/ui/LinkCard';
 import { Footer } from '../../components/layout/Footer';
@@ -9,9 +9,11 @@ import { Link } from '../../components/ui/Link';
 import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
 
-type Props = Articles;
+type Props = {
+  issues: Issues;
+};
 
-const ArticlesPage: NextPage<Props> = ({ articles }) => {
+const ArticlesPage: NextPage<Props> = ({ issues }) => {
   return (
     <>
       <Head
@@ -28,19 +30,16 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
         <div className="container mx-auto px-4">
           <Heading level={2}>Blog</Heading>
           <ul>
-            {articles.map((article) => (
-              <li key={article.id}>
-                <Link href={`/articles/${article.id}`}>
-                  <LinkCard
-                    note={`${new Date(
-                      article.publishedAt
-                    ).toLocaleDateString()}`}
-                  >
-                    {article.title}
-                  </LinkCard>
-                </Link>
-              </li>
-            ))}
+            {issues.map((issue) => {
+              const [date, title] = issue.title.split(' - ');
+              return (
+                <li key={issue.id}>
+                  <Link href={`/articles/${issue.number}`}>
+                    <LinkCard note={date}>{title}</LinkCard>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </PageTransition>
@@ -50,15 +49,12 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.get({
-    endpoint: 'articles',
-    queries: { limit: 1000, orders: '-publishedAt' },
-  });
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const issues = await getIssues({ labels: 'Blog' });
 
   return {
     props: {
-      articles: data.contents,
+      issues,
     },
   };
 };
