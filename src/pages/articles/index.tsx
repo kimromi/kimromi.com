@@ -50,7 +50,10 @@ const ArticlesPage: NextPage<Props> = ({ issues }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const issues = await getIssues({ labels: 'Blog' });
+  const issues = await getIssues({
+    labels: 'Blog',
+    state: process.env.NODE_ENV === 'production' ? 'closed' : 'all',
+  });
 
   return {
     props: {
