@@ -13,43 +13,30 @@ type Props = {
   issues: Issues;
 };
 
-const ReportsPage: NextPage<Props> = ({ issues }) => {
+const ScrapsPage: NextPage<Props> = ({ issues }) => {
   return (
     <>
       <Head
-        title="Reports | kimromi"
-        description="読書や記事を呼んでの感想"
+        title="Scraps | kimromi"
+        description="作業メモや知見"
         og={{ type: 'blog' }}
       />
 
       <StickyHeader>
-        <Link href="/reports">Reports</Link>
+        <Link href="/scraps">Scraps</Link>
       </StickyHeader>
 
       <PageTransition>
         <div className="container mx-auto px-4">
-          <Heading level={2}>Reports</Heading>
+          <Heading level={2}>Scraps</Heading>
           <ul>
-            {issues.map(({ node_id, number, title, labels }) => {
-              let tags: string[] = [];
-              for (const label of labels) {
-                if (typeof label === 'string') {
-                  tags.push(label);
-                } else if (label.name) {
-                  tags.push(label.name);
-                }
-              }
-
-              return (
-                <li key={node_id}>
-                  <Link href={`/reports/${number}`}>
-                    <LinkCard tags={tags.filter((tag) => tag !== 'Report')}>
-                      {title}
-                    </LinkCard>
-                  </Link>
-                </li>
-              );
-            })}
+            {issues.map(({ node_id, number, title }) => (
+              <li key={node_id}>
+                <Link href={`/scraps/${number}`}>
+                  <LinkCard>{title}</LinkCard>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <p className="mt-16 text-sm text-tertiary">
@@ -72,9 +59,9 @@ const ReportsPage: NextPage<Props> = ({ issues }) => {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      issues: await getIssues({ labels: 'Report' }),
+      issues: await getIssues({ labels: 'Scrap' }),
     },
   };
 };
 
-export default ReportsPage;
+export default ScrapsPage;
