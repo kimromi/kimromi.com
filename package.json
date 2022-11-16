@@ -15,10 +15,10 @@
     "framer-motion": "^6.3.3",
     "highlight.js": "^11.5.1",
     "marked": "^4.0.15",
-    "next": "12.1.5",
+    "next": "^13.0.3",
     "octokit": "^1.7.1",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -28,7 +28,7 @@
     "autoprefixer": "^10.4.5",
     "babel-loader": "^8.2.5",
     "eslint": "^8.14.0",
-    "eslint-config-next": "^12.1.5",
+    "eslint-config-next": "^13.0.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwindcss": "^3.5.0",
     "next-sitemap": "^2.5.20",
