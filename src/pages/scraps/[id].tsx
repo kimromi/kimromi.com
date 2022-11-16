@@ -18,18 +18,9 @@ type Props = {
 };
 
 const ScrapPage: NextPage<Props> = ({
-  issue: { number, title, body, labels },
+  issue: { number, title, body },
   comments,
 }) => {
-  let tags: string[] = [];
-  for (const label of labels) {
-    if (typeof label === 'string') {
-      tags.push(label);
-    } else if (label.name) {
-      tags.push(label.name);
-    }
-  }
-
   return (
     <>
       <Head
@@ -48,13 +39,6 @@ const ScrapPage: NextPage<Props> = ({
         <div className="container mx-auto mt-16 px-4">
           <main>
             <Heading level={1}>{title}</Heading>
-            <Tags className="mb-8">
-              {tags
-                .filter((tag) => tag != 'Scrap')
-                .map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-            </Tags>
 
             {body && (
               <section
