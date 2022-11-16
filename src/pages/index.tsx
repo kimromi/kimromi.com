@@ -23,6 +23,9 @@ const Home: NextPage = () => (
       <Link href="/reports">
         <LinkCard note="書籍や記事を読んだ感想">Reports</LinkCard>
       </Link>
+      <Link href="/scraps">
+        <LinkCard note="作業メモや知見">Scraps</LinkCard>
+      </Link>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
         <LinkCard note="旧ブログ">Hatena Blog</LinkCard>
       </ExternalLink>
