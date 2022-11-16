@@ -7,13 +7,9 @@ import { Footer } from '../../components/layout/Footer';
 import styles from '../../styles/article.module.css';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/head';
-import { load } from 'cheerio';
-import hljs from 'highlight.js';
-import { marked } from 'marked';
-import 'highlight.js/styles/atom-one-dark.css';
 import { Heading } from '../../components/ui/Heading';
-import React from 'react';
 import { ExternalLink } from '../../components/ui/Link';
+import { toHtml } from '../../lib/markdownToHtml';
 
 type Props = {
   issue: Issue;
@@ -52,9 +48,7 @@ const ArticlePage: NextPage<Props> = ({
 
             <article className={styles.article}>
               {body && (
-                <section
-                  dangerouslySetInnerHTML={{ __html: parseHtml(body) }}
-                />
+                <section dangerouslySetInnerHTML={{ __html: toHtml(body) }} />
               )}
 
               {comments.map(
@@ -63,7 +57,7 @@ const ArticlePage: NextPage<Props> = ({
                     <section
                       key={node_id}
                       dangerouslySetInnerHTML={{
-                        __html: parseHtml(body),
+                        __html: toHtml(body),
                       }}
                     />
                   )
@@ -114,17 +108,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export default ArticlePage;
-
-function parseHtml(markdownBody?: string | null) {
-  if (!markdownBody) return '';
-
-  // syntax highlight & parse HTML
-  const html = marked.parse(markdownBody);
-  const $ = load(html);
-  $('pre code').each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text());
-    $(elm).html(result.value);
-    $(elm).addClass('hljs');
-  });
-  return $.html();
-}

@@ -60,6 +60,7 @@
 
 .article pre code {
   @apply leading-7;
+  @apply text-sm;
 }
 
 .article p code {

@@ -6,11 +6,11 @@ import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
-import { marked } from 'marked';
 import type { Issue, Comments } from '../../lib/githubClient';
 import styles from '../../styles/reports.module.css';
 import { Tags, Tag } from '../../components/ui/Tag';
 import { ExternalLink } from '../../components/ui/Link';
+import { toHtml } from '../../lib/markdownToHtml';
 
 type Props = {
   issue: Issue;
@@ -59,7 +59,7 @@ const ReportPage: NextPage<Props> = ({
             {body && (
               <section
                 className={styles.report}
-                dangerouslySetInnerHTML={{ __html: marked.parse(body) }}
+                dangerouslySetInnerHTML={{ __html: toHtml(body) }}
               />
             )}
 
@@ -69,7 +69,7 @@ const ReportPage: NextPage<Props> = ({
                   <section
                     key={node_id}
                     className={styles.report}
-                    dangerouslySetInnerHTML={{ __html: marked.parse(body) }}
+                    dangerouslySetInnerHTML={{ __html: toHtml(body) }}
                   />
                 )
             )}
