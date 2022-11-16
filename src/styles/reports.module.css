@@ -49,12 +49,13 @@
 }
 
 .report pre {
-  @apply my-4 px-4 py-3 overflow-x-auto;
+  @apply my-4 overflow-x-auto;
   @apply bg-secondary rounded-md;
 }
 
 .report pre code {
   @apply leading-7;
+  @apply text-sm;
 }
 
 .report p code {

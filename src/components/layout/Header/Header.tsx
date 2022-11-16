@@ -1,12 +1,18 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ExternalServices } from '../../ui/ExternalServices';
-import { Link } from '../../ui/Link';
 
 export const Header: React.FC = () => (
   <header className="mt-24 mb-20 flex flex-col justify-center">
     <div className="text-center">
       <Link href="/">
-        <Image src="/logo.png" alt="logo" width={72} height={72} />
+        <Image
+          src="/logo.png"
+          alt="logo"
+          width={72}
+          height={72}
+          className="inline"
+        />
       </Link>
     </div>
     <div className="mt-4 text-center text-3xl">
