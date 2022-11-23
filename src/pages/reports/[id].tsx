@@ -35,7 +35,7 @@ const ReportPage: NextPage<Props> = ({
       <Head
         title={`「${title}」の感想 | kimromi`}
         description={`「${title}」の感想`}
-        og={{ type: 'article' }}
+        og={{ title: `「${title}」の感想`, type: 'article' }}
       />
 
       <StickyHeader>

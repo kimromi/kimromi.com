@@ -25,7 +25,7 @@ const ScrapPage: NextPage<Props> = ({
       <Head
         title={`${title} | kimromi`}
         description={title}
-        og={{ type: 'article' }}
+        og={{ title, type: 'article' }}
       />
 
       <StickyHeader>

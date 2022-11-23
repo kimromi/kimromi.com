@@ -19,7 +19,7 @@ const ArticlesPage: NextPage<Props> = ({ issues }) => {
       <Head
         title="Blog | kimromi"
         description="Daily blog"
-        og={{ type: 'blog' }}
+        og={{ title: 'Blog', type: 'blog' }}
       />
 
       <StickyHeader>
