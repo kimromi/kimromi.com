@@ -20,11 +20,18 @@ const ScrapPage: NextPage<Props> = ({
   issue: { number, title, body },
   comments,
 }) => {
+  const description =
+    [body, comments.map((comment) => comment.body)]
+      .join('')
+      .replace(/<.+?>/g, '')
+      .trim()
+      .substring(0, 100) + '...';
+
   return (
     <>
       <Head
         title={`${title} | kimromi`}
-        description={title}
+        description={description}
         og={{ title, type: 'article' }}
       />
 

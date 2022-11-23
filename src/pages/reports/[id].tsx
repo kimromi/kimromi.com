@@ -21,6 +21,13 @@ const ReportPage: NextPage<Props> = ({
   issue: { number, title, body, labels },
   comments,
 }) => {
+  const description =
+    [body, comments.map((comment) => comment.body)]
+      .join('')
+      .replace(/<.+?>/g, '')
+      .trim()
+      .substring(0, 100) + '...';
+
   let tags: string[] = [];
   for (const label of labels) {
     if (typeof label === 'string') {
@@ -34,7 +41,7 @@ const ReportPage: NextPage<Props> = ({
     <>
       <Head
         title={`「${title}」の感想 | kimromi`}
-        description={`「${title}」の感想`}
+        description={description}
         og={{ title: `「${title}」の感想`, type: 'article' }}
       />
 
