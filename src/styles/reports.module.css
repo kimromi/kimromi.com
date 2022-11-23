@@ -44,7 +44,7 @@
 }
 
 .report img {
-  @apply mt-12 mb-12;
+  @apply mt-4 mb-12;
   @apply rounded-md border border-secondary;
 }
 
@@ -63,7 +63,7 @@
   @apply bg-secondary rounded-md;
 }
 
-.report blockquote p {
+.report blockquote {
   @apply my-6 pl-4;
   @apply border-l-2 border-tertiary;
   @apply text-tertiary;
