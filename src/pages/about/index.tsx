@@ -12,7 +12,11 @@ import { Heading } from '../../components/ui/Heading';
 const AboutPage: NextPage = () => {
   return (
     <>
-      <Head title="About | kimromi" description="About kimromi" />
+      <Head
+        title="About | kimromi"
+        description="About kimromi"
+        og={{ title: 'About' }}
+      />
 
       <StickyHeader>
         <Link href="/about">About</Link>

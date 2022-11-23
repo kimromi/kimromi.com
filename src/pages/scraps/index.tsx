@@ -20,7 +20,7 @@ const ScrapsPage: NextPage<Props> = ({ issues }) => {
       <Head
         title="Scraps | kimromi"
         description="作業メモや知見"
-        og={{ type: 'blog' }}
+        og={{ title: 'Scraps', type: 'blog' }}
       />
 
       <StickyHeader>
