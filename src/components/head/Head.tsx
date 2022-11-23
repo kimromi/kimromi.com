@@ -33,7 +33,9 @@ export const Head: React.FC<Props> = ({ title, description, og = {} }) => {
       <meta property="og:url" content={og.url || canonical} />
       <meta
         property="og:image"
-        content={`${baseURL}/api/og?title=${og.title || ''}`}
+        content={`${baseURL}/api/og?title=${encodeURIComponent(
+          og.title || ''
+        )}`}
       />
       <meta property="og:description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
