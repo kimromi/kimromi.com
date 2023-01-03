@@ -69,6 +69,14 @@
   @apply text-tertiary;
 }
 
+.report table {
+  @apply w-full;
+}
+.report table th, .report table td {
+  @apply py-1 px-2;
+  @apply border border-tertiary;
+}
+
 .report iframe {
   @apply w-full;
 }
