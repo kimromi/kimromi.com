@@ -72,7 +72,8 @@
 .note table {
   @apply w-full;
 }
-.note table th, .note table td {
+.note table th,
+.note table td {
   @apply py-1 px-2;
   @apply border border-tertiary;
 }
