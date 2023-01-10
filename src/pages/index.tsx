@@ -17,14 +17,8 @@ const Home: NextPage = () => (
       <Link href="/about">
         <LinkCard note="こんにちは！">About</LinkCard>
       </Link>
-      <Link href="/articles">
-        <LinkCard note="ブログ">Blog</LinkCard>
-      </Link>
-      <Link href="/reports">
-        <LinkCard note="書籍や記事を読んだ感想">Reports</LinkCard>
-      </Link>
-      <Link href="/scraps">
-        <LinkCard note="作業メモや知見">Scraps</LinkCard>
+      <Link href="/notes">
+        <LinkCard note="作業メモ・読書ログ・ブログなど">Notes</LinkCard>
       </Link>
       <ExternalLink href="https://kimromi.hatenablog.jp/">
         <LinkCard note="旧ブログ">Hatena Blog</LinkCard>

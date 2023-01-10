@@ -218,7 +218,7 @@ const AboutPage: NextPage = () => {
               </EventDescription>
               <EventNote>React, Redux, TypeScript, GraphQL</EventNote>
 
-              <Link href="/articles/0cl_o01665u7">
+              <Link href="/notes/26">
                 <LinkCard
                   title="マネーフォワードにジョインして3ヶ月で取り組んだフロントエンドの改善と所感"
                   category="kimromi.com"
