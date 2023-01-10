@@ -1,73 +1,82 @@
-.article {
+.note {
   @apply mb-12 break-words;
   @apply leading-8;
 }
 
-.article h2 {
+.note h2 {
   @apply mt-16 mb-8;
   @apply font-medium text-3xl;
 }
 
-.article h3 {
-  @apply mt-12 mb-4;
-  @apply font-bold text-lg;
+.note h3 {
+  @apply mt-8 mb-4;
+  @apply font-medium text-xl;
 }
 
-.article h4 {
-  @apply mt-6 mb-4;
-  @apply font-bold;
+.note p {
+  @apply my-2;
 }
 
-.article p {
-  @apply my-6;
-}
-
-.article p br {
+.note p br {
   @apply block;
   @apply content-[""];
   @apply pb-6;
 }
 
-.article a {
+.note a {
   @apply text-blue-500;
 }
 
-.article strong {
+.note strong {
   @apply font-bold;
 }
 
-.article ul {
+.note ul {
   @apply list-disc;
   @apply pl-4;
 }
-.article li {
+.note li {
   @apply mb-2;
   @apply font-light;
 }
-.article li::marker {
+.note li::marker {
   @apply mr-2;
 }
 
-.article img {
+.note img {
   @apply mt-4 mb-12;
   @apply rounded-md border border-secondary;
 }
 
-.article pre {
+.note pre {
   @apply my-4 overflow-x-auto;
   @apply bg-secondary rounded-md;
 }
 
-.article pre code {
+.note pre code {
   @apply leading-7;
   @apply text-sm;
 }
 
-.article p code {
+.note p code {
   @apply p-1;
   @apply bg-secondary rounded-md;
 }
 
-.article iframe {
+.note blockquote {
+  @apply my-6 pl-4;
+  @apply border-l-2 border-tertiary;
+  @apply text-tertiary;
+}
+
+.note table {
+  @apply w-full;
+}
+.note table th, .note table td {
+  @apply py-1 px-2;
+  @apply border border-tertiary;
+}
+
+.note iframe {
   @apply w-full;
 }

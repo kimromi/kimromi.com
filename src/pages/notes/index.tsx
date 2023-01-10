@@ -14,39 +14,43 @@ type Props = {
   issues: Issues;
 };
 
-const ReportsPage: NextPage<Props> = ({ issues }) => {
+const NotesPage: NextPage<Props> = ({ issues }) => {
   return (
     <>
       <Head
-        title="Reports | kimromi"
-        description="読書や記事を呼んでの感想"
-        og={{ title: 'Reports', type: 'blog' }}
+        title="Notes | kimromi"
+        description="ブログ・作業ログ・読書・インプットログなど"
+        og={{ title: 'Notes', type: 'blog' }}
       />
 
-      <StickyHeader>
-        <Link href="/reports">Reports</Link>
-      </StickyHeader>
+      <StickyHeader>Notes</StickyHeader>
 
       <PageTransition>
         <div className="container mx-auto px-4">
-          <Heading level={2}>Reports</Heading>
+          <Heading level={2}>Notes</Heading>
           <ul>
-            {issues.map(({ node_id, number, title, labels }) => {
+            {issues.map(({ node_id, number, title, labels, html_url }) => {
+              if (/pull/.test(html_url)) return;
+
               let tags: string[] = [];
               for (const label of labels) {
-                if (typeof label === 'string') {
-                  tags.push(label);
-                } else if (label.name) {
-                  tags.push(label.name);
-                }
+                const tag = typeof label === 'string' ? label : label.name;
+                if (tag) tags.push(tag);
+              }
+
+              let note = '🙂 ブログ';
+              if (tags.includes('Scrap')) {
+                note = '📝 作業ログ・知見';
+              } else if (tags.includes('Book')) {
+                note = '📚 読書ログ';
+              } else if (tags.includes('Audio')) {
+                note = '👂 Podcastなどを聴いて';
               }
 
               return (
                 <li key={node_id}>
-                  <Link href={`/reports/${number}`}>
-                    <LinkCard tags={tags.filter((tag) => tag !== 'Report')}>
-                      {title}
-                    </LinkCard>
+                  <Link href={`/notes/${number}`}>
+                    <LinkCard note={note}>{title}</LinkCard>
                   </Link>
                 </li>
               );
@@ -71,11 +75,13 @@ const ReportsPage: NextPage<Props> = ({ issues }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  const issues = await getIssues({});
+
   return {
     props: {
-      issues: await getIssues({ labels: 'Report' }),
+      issues,
     },
   };
 };
 
-export default ReportsPage;
+export default NotesPage;

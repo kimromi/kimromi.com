@@ -7,7 +7,7 @@ import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
 import { getIssues, getIssue, getIssueComments } from '../../lib/githubClient';
 import type { Issue, Comments } from '../../lib/githubClient';
-import styles from '../../styles/reports.module.css';
+import styles from './note.module.css';
 import { ExternalLink } from '../../components/ui/Link';
 import { toHtml } from '../../lib/markdownToHtml';
 
@@ -16,7 +16,7 @@ type Props = {
   comments: Comments;
 };
 
-const ScrapPage: NextPage<Props> = ({
+const NotePage: NextPage<Props> = ({
   issue: { number, title, body },
   comments,
 }) => {
@@ -36,7 +36,7 @@ const ScrapPage: NextPage<Props> = ({
       />
 
       <StickyHeader>
-        <Link href="/scraps">Scraps</Link>
+        <Link href="/notes">Notes</Link>
         <Devider className="hidden pc:inline" />
         <span className="hidden pc:inline">{title}</span>
       </StickyHeader>
@@ -44,11 +44,13 @@ const ScrapPage: NextPage<Props> = ({
       <PageTransition>
         <div className="container mx-auto mt-16 px-4">
           <main>
-            <Heading level={1}>{title}</Heading>
+            <div className="mb-12 border-b border-tertiary pb-8">
+              <Heading level={1}>{title}</Heading>
+            </div>
 
             {body && (
               <section
-                className={styles.report}
+                className={styles.note}
                 dangerouslySetInnerHTML={{ __html: toHtml(body) }}
               />
             )}
@@ -58,7 +60,7 @@ const ScrapPage: NextPage<Props> = ({
                 body && (
                   <section
                     key={node_id}
-                    className={styles.report}
+                    className={styles.note}
                     dangerouslySetInnerHTML={{ __html: toHtml(body) }}
                   />
                 )
@@ -83,9 +85,9 @@ const ScrapPage: NextPage<Props> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const issues = await getIssues({ labels: 'Scrap' });
+  const issues = await getIssues({});
 
-  const paths = issues.map((issue) => `/scraps/${issue.number}`);
+  const paths = issues.map((issue) => `/notes/${issue.number}`);
   return { paths, fallback: false };
 };
 
@@ -107,4 +109,4 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   };
 };
 
-export default ScrapPage;
+export default NotePage;
