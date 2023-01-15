@@ -23,8 +23,8 @@ const AboutPage: NextPage = () => {
         <Link href="/about">About</Link>
       </StickyHeader>
 
-      <PageTransition>
-        <Center>
+      <Center>
+        <PageTransition>
           <main>
             <Heading level={2}>About me</Heading>
 
@@ -445,10 +445,10 @@ const AboutPage: NextPage = () => {
               </Event>
             </Timeline>
           </main>
-        </Center>
-      </PageTransition>
+        </PageTransition>
 
-      <Footer showExternalServices />
+        <Footer showExternalServices />
+      </Center>
 
       <script async src="https://note.com/scripts/embed.js" charSet="utf-8" />
     </>

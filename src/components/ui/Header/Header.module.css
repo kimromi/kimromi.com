@@ -1,0 +1,7 @@
+.header {
+  margin-top: var(--s4);
+  margin-bottom: var(--s3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

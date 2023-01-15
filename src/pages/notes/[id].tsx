@@ -42,8 +42,8 @@ const NotePage: NextPage<Props> = ({
         <span className="hidden pc:inline">{title}</span>
       </StickyHeader>
 
-      <PageTransition>
-        <Center>
+      <Center>
+        <PageTransition>
           <main>
             <div className="mb-12 border-b border-tertiary pb-8">
               <Heading level={1}>{title}</Heading>
@@ -77,8 +77,8 @@ const NotePage: NextPage<Props> = ({
               https://github.com/kimromi/notes/issues/{number}
             </ExternalLink>
           </p>
-        </Center>
-      </PageTransition>
+        </PageTransition>
+      </Center>
 
       <Footer showExternalServices />
     </>
