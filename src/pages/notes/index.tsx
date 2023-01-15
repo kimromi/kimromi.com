@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Center } from '../../components/layout/Center';
 import { StickyHeader } from '../../components/ui/Header';
 import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
@@ -26,7 +27,7 @@ const NotesPage: NextPage<Props> = ({ issues }) => {
       <StickyHeader>Notes</StickyHeader>
 
       <PageTransition>
-        <div className="container mx-auto px-4">
+        <Center>
           <Heading level={2}>Notes</Heading>
           <ul>
             {issues.map(({ node_id, number, title, labels, html_url }) => {
@@ -66,7 +67,7 @@ const NotesPage: NextPage<Props> = ({ issues }) => {
               https://github.com/kimromi/notes/issues
             </ExternalLink>
           </p>
-        </div>
+        </Center>
       </PageTransition>
 
       <Footer showExternalServices />
