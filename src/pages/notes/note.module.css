@@ -38,7 +38,8 @@
   padding-left: var(--s1);
   list-style-type: disc;
 }
-.note li + li, .note li > ul li {
+.note li + li,
+.note li > ul li {
   margin-top: var(--s0);
 }
 
