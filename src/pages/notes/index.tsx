@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { StickyHeader } from '../../components/layout/Header';
-import { Footer } from '../../components/layout/Footer';
+import { Center } from '../../components/layout/Center';
+import { StickyHeader } from '../../components/ui/Header';
+import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/head';
@@ -25,49 +26,52 @@ const NotesPage: NextPage<Props> = ({ issues }) => {
 
       <StickyHeader>Notes</StickyHeader>
 
-      <PageTransition>
-        <div className="container mx-auto px-4">
-          <Heading level={2}>Notes</Heading>
-          <ul>
-            {issues.map(({ node_id, number, title, labels, html_url }) => {
-              if (/pull/.test(html_url)) return;
+      <Center>
+        <PageTransition>
+          <main>
+            <Heading level={2}>Notes</Heading>
 
-              let tags: string[] = [];
-              for (const label of labels) {
-                const tag = typeof label === 'string' ? label : label.name;
-                if (tag) tags.push(tag);
-              }
+            <ul>
+              {issues.map(({ node_id, number, title, labels, html_url }) => {
+                if (/pull/.test(html_url)) return;
 
-              let note = '🙂 ブログ';
-              if (tags.includes('Scrap')) {
-                note = '📝 作業ログ・知見';
-              } else if (tags.includes('Book')) {
-                note = '📚 読書ログ';
-              } else if (tags.includes('Audio')) {
-                note = '👂 Podcastなどを聴いて';
-              }
+                let tags: string[] = [];
+                for (const label of labels) {
+                  const tag = typeof label === 'string' ? label : label.name;
+                  if (tag) tags.push(tag);
+                }
 
-              return (
-                <li key={node_id}>
-                  <Link href={`/notes/${number}`}>
-                    <LinkCard note={note}>{title}</LinkCard>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+                let note = '🙂 ブログ';
+                if (tags.includes('Scrap')) {
+                  note = '📝 作業ログ・知見';
+                } else if (tags.includes('Book')) {
+                  note = '📚 読書ログ';
+                } else if (tags.includes('Audio')) {
+                  note = '👂 Podcastなどを聴いて';
+                }
 
-          <p className="mt-16 text-sm text-tertiary">
-            Based on{' '}
-            <ExternalLink
-              underline
-              href="https://github.com/kimromi/notes/issues"
-            >
-              https://github.com/kimromi/notes/issues
-            </ExternalLink>
-          </p>
-        </div>
-      </PageTransition>
+                return (
+                  <li key={node_id}>
+                    <Link href={`/notes/${number}`}>
+                      <LinkCard note={note}>{title}</LinkCard>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <p className="mt-16 text-sm text-tertiary">
+              Based on{' '}
+              <ExternalLink
+                underline
+                href="https://github.com/kimromi/notes/issues"
+              >
+                https://github.com/kimromi/notes/issues
+              </ExternalLink>
+            </p>
+          </main>
+        </PageTransition>
+      </Center>
 
       <Footer showExternalServices />
     </>

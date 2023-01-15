@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { StickyHeader, Devider } from '../../components/layout/Header';
-import { Footer } from '../../components/layout/Footer';
+import { Center } from '../../components/layout/Center';
+import { StickyHeader, Devider } from '../../components/ui/Header';
+import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';
@@ -41,8 +42,8 @@ const NotePage: NextPage<Props> = ({
         <span className="hidden pc:inline">{title}</span>
       </StickyHeader>
 
-      <PageTransition>
-        <div className="container mx-auto mt-16 px-4">
+      <Center>
+        <PageTransition>
           <main>
             <div className="mb-12 border-b border-tertiary pb-8">
               <Heading level={1}>{title}</Heading>
@@ -76,8 +77,8 @@ const NotePage: NextPage<Props> = ({
               https://github.com/kimromi/notes/issues/{number}
             </ExternalLink>
           </p>
-        </div>
-      </PageTransition>
+        </PageTransition>
+      </Center>
 
       <Footer showExternalServices />
     </>

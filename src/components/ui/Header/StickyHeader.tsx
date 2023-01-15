@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Center } from '../../layout/Center';
 
 type Props = {
   children?: React.ReactNode;
@@ -10,14 +11,16 @@ type DeviderProps = {
 };
 
 export const StickyHeader: React.FC<Props> = ({ children }) => (
-  <header className="container z-50 mx-auto mb-4 flex items-center bg-background p-4 text-sm pc:sticky pc:top-0">
-    <Link href="/" className="flex items-center">
-      <Image src="/logo.png" alt="logo" width={20} height={20} />
-      <span className="ml-2">kimromi</span>
-    </Link>
-    <Devider />
-    {children}
-  </header>
+  <Center>
+    <header className="my-4 flex text-sm">
+      <Link href="/" className="flex">
+        <Image src="/logo.png" alt="logo" width={20} height={20} />
+        <span className="ml-2">kimromi</span>
+      </Link>
+      <Devider />
+      {children}
+    </header>
+  </Center>
 );
 
 export const Devider: React.FC<DeviderProps> = ({ className }) => (

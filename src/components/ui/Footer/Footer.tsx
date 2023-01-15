@@ -1,4 +1,4 @@
-import { ExternalServices } from '../../ui/ExternalServices';
+import { ExternalServices } from '../ExternalServices';
 
 type Props = {
   showExternalServices?: boolean;

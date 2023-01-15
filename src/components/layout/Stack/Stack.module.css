@@ -1,0 +1,23 @@
+/* https://every-layout.dev/layouts/stack/ */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack-small > * + * {
+  margin-top: var(--s0);
+}
+
+.stack-medium > * + * {
+  margin-top: var(--s1);
+}
+
+.stack-large > * + * {
+  margin-top: var(--s2);
+}
