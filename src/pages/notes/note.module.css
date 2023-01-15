@@ -1,11 +1,15 @@
 .note {
-  @apply mb-12 break-words;
-  @apply leading-8;
+  margin-bottom: var(--s3);
+  overflow-wrap: break-word;
+}
+
+.note > * + * {
+  margin-top: var(--s1);
 }
 
 .note h2 {
-  @apply mt-16 mb-8;
-  @apply font-medium text-3xl;
+  font-size: 1.875rem;
+  line-height: 1.5;
 }
 
 .note h3 {
@@ -14,9 +18,8 @@
 }
 
 .note p {
-  @apply my-2;
+  line-height: 2;
 }
-
 .note p br {
   @apply block;
   @apply content-[""];
@@ -32,15 +35,12 @@
 }
 
 .note ul {
-  @apply list-disc;
-  @apply pl-4;
+  padding-left: var(--s1);
+  list-style-type: disc;
 }
-.note li {
-  @apply mb-2;
-  @apply font-light;
-}
-.note li::marker {
-  @apply mr-2;
+.note li + li,
+.note li > ul li {
+  margin-top: var(--s0);
 }
 
 .note img {

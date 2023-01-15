@@ -45,7 +45,7 @@ const NotePage: NextPage<Props> = ({
       <Center>
         <PageTransition>
           <main>
-            <div className="mb-12 border-b border-tertiary pb-8">
+            <div className="mt-16 mb-12 border-b border-tertiary pb-8">
               <Heading level={1}>{title}</Heading>
             </div>
 
