@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { NextPage } from 'next';
-import { StickyHeader } from '../../components/layout/Header';
-import { Footer } from '../../components/layout/Footer';
+import { StickyHeader } from '../../components/ui/Header';
+import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/head';

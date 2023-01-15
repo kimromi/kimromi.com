@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { StickyHeader, Devider } from '../../components/layout/Header';
-import { Footer } from '../../components/layout/Footer';
+import { StickyHeader, Devider } from '../../components/ui/Header';
+import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { Head } from '../../components/head';
 import { Heading } from '../../components/ui/Heading';

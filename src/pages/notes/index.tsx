@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { StickyHeader } from '../../components/layout/Header';
-import { Footer } from '../../components/layout/Footer';
+import { StickyHeader } from '../../components/ui/Header';
+import { Footer } from '../../components/ui/Footer';
 import { PageTransition } from '../../components/layout/PageTransition';
 import { ExternalLink } from '../../components/ui/Link';
 import { Head } from '../../components/head';
