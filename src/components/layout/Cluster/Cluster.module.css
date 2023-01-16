@@ -1,0 +1,22 @@
+/* https://every-layout.dev/layouts/cluster/ */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gap-small {
+  gap: var(--s-2);
+}
+
+.gap-medium {
+  gap: var(--s0);
+}
+
+.gap-large {
+  gap: var(--s2);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
