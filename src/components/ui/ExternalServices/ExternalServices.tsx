@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { Cluster } from '../../layout/Cluster';
 import { ExternalLink } from '../Link';
 
 export const ExternalServices: React.FC = () => (
-  <div className="flex justify-center gap-4">
+  <Cluster center>
     <ExternalLink href="https://twitter.com/kimromi">
       <Image src="/logos/twitter.svg" alt="twitter" width={20} height={20} />
     </ExternalLink>
@@ -28,5 +29,5 @@ export const ExternalServices: React.FC = () => (
     <ExternalLink href="https://zenn.dev/kimromi">
       <Image src="/logos/zenn.svg" alt="zenn" width={20} height={20} />
     </ExternalLink>
-  </div>
+  </Cluster>
 );
