@@ -41,13 +41,15 @@ const NotesPage: NextPage<Props> = ({ issues }) => {
                   if (tag) tags.push(tag);
                 }
 
-                let note = '🙂 ブログ';
-                if (tags.includes('Scrap')) {
-                  note = '📝 作業ログ・知見';
+                let note = '📖 Diary';
+                if (tags.includes('Blog')) {
+                  note = '📰 Blog';
+                } else if (tags.includes('Scrap')) {
+                  note = '✍ Scrap';
                 } else if (tags.includes('Book')) {
-                  note = '📚 読書ログ';
+                  note = '📚 Book log';
                 } else if (tags.includes('Audio')) {
-                  note = '👂 Podcastなどを聴いて';
+                  note = '👂 Listening log';
                 }
 
                 return (
