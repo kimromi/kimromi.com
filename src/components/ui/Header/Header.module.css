@@ -1,7 +1,19 @@
 .header {
-  margin-top: var(--s4);
+  margin-top: var(--s5);
   margin-bottom: var(--s3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  display: inline;
+}
+
+.name {
+  font-size: var(--s3);
+  line-height: 1.2;
+}
+
+.who {
+  font-size: var(--s-1);
+  color: var(--color-tertiary);
 }

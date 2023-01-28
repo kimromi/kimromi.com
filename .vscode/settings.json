@@ -18,6 +18,9 @@
   "[json]": {
     "editor.formatOnSave": true
   },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
   // ESLint
   "eslint.alwaysShowStatus": true,
   "eslint.options": {

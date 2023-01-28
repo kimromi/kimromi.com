@@ -11,6 +11,7 @@ import type { Issue, Comments } from '../../lib/githubClient';
 import styles from './note.module.css';
 import { ExternalLink } from '../../components/ui/Link';
 import { toHtml } from '../../lib/markdownToHtml';
+import { Stack } from '../../components/layout/Stack';
 
 type Props = {
   issue: Issue;
@@ -36,51 +37,53 @@ const NotePage: NextPage<Props> = ({
         og={{ title, type: 'article' }}
       />
 
-      <StickyHeader>
-        <Link href="/notes">Notes</Link>
-        <Devider className="hidden pc:inline" />
-        <span className="hidden pc:inline">{title}</span>
-      </StickyHeader>
+      <Stack space="large">
+        <StickyHeader>
+          <Link href="/notes">Notes</Link>
+          <Devider className="hidden pc:inline" />
+          <span className="hidden pc:inline">{title}</span>
+        </StickyHeader>
 
-      <Center>
-        <PageTransition>
-          <main>
-            <div className="mt-16 mb-12 border-b border-tertiary pb-8">
-              <Heading level={1}>{title}</Heading>
-            </div>
+        <Center>
+          <PageTransition>
+            <main>
+              <div className="mt-16 mb-12 border-b border-tertiary pb-8">
+                <Heading level={1}>{title}</Heading>
+              </div>
 
-            {body && (
-              <section
-                className={styles.note}
-                dangerouslySetInnerHTML={{ __html: toHtml(body) }}
-              />
-            )}
+              {body && (
+                <section
+                  className={styles.note}
+                  dangerouslySetInnerHTML={{ __html: toHtml(body) }}
+                />
+              )}
 
-            {comments.map(
-              ({ node_id, body }) =>
-                body && (
-                  <section
-                    key={node_id}
-                    className={styles.note}
-                    dangerouslySetInnerHTML={{ __html: toHtml(body) }}
-                  />
-                )
-            )}
-          </main>
+              {comments.map(
+                ({ node_id, body }) =>
+                  body && (
+                    <section
+                      key={node_id}
+                      className={styles.note}
+                      dangerouslySetInnerHTML={{ __html: toHtml(body) }}
+                    />
+                  )
+              )}
+            </main>
 
-          <p className="mt-16 text-sm text-tertiary">
-            Based on{' '}
-            <ExternalLink
-              underline
-              href={`https://github.com/kimromi/notes/issues/${number}`}
-            >
-              https://github.com/kimromi/notes/issues/{number}
-            </ExternalLink>
-          </p>
-        </PageTransition>
-      </Center>
+            <p className="mt-16 text-sm text-tertiary">
+              Based on{' '}
+              <ExternalLink
+                underline
+                href={`https://github.com/kimromi/notes/issues/${number}`}
+              >
+                https://github.com/kimromi/notes/issues/{number}
+              </ExternalLink>
+            </p>
+          </PageTransition>
+        </Center>
 
-      <Footer showExternalServices />
+        <Footer showExternalServices />
+      </Stack>
     </>
   );
 };

@@ -1,16 +1,19 @@
+import { Center } from '../../layout/Center';
+import { Stack } from '../../layout/Stack';
 import { ExternalServices } from '../ExternalServices';
+import styles from './Footer.module.css';
 
 type Props = {
   showExternalServices?: boolean;
 };
 
 export const Footer: React.FC<Props> = ({ showExternalServices = false }) => (
-  <footer className="mt-20 mb-8 text-center text-xs text-tertiary">
-    {showExternalServices && (
-      <div className="mb-2">
-        <ExternalServices />
-      </div>
-    )}
-    &copy; {new Date().getFullYear()} kimromi
-  </footer>
+  <Center>
+    <footer className={styles.footer}>
+      <Stack space="small">
+        {showExternalServices && <ExternalServices />}
+        <div>&copy; {new Date().getFullYear()} kimromi</div>
+      </Stack>
+    </footer>
+  </Center>
 );
