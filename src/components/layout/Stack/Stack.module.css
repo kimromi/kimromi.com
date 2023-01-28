@@ -15,9 +15,9 @@
 }
 
 .stack-medium > * + * {
-  margin-top: var(--s1);
+  margin-top: var(--s2);
 }
 
 .stack-large > * + * {
-  margin-top: var(--s2);
+  margin-top: var(--s5);
 }

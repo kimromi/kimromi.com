@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background;
-  @apply text-primary tracking-wide;
-}
-
 :root {
-  --ratio: 1.5;
+  --ratio: 1.25;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -20,4 +15,15 @@ body {
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  --color-primary: #f4f4f5;
+  --color-secondary: #27272a;
+  --color-tertiary: #71717a;
+  --color-background: #191919;
+}
+
+body {
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  letter-spacing: 0.025em;
 }

@@ -10,6 +10,7 @@ import { LinkCard } from '../../components/ui/LinkCard';
 import { getIssues } from '../../lib/githubClient';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Issues } from '../../lib/githubClient';
+import { Stack } from '../../components/layout/Stack';
 
 type Props = {
   issues: Issues;
@@ -24,58 +25,60 @@ const NotesPage: NextPage<Props> = ({ issues }) => {
         og={{ title: 'Notes', type: 'blog' }}
       />
 
-      <StickyHeader>Notes</StickyHeader>
+      <Stack space="large">
+        <StickyHeader>Notes</StickyHeader>
 
-      <Center>
-        <PageTransition>
-          <main>
-            <Heading level={2}>Notes</Heading>
+        <Center>
+          <PageTransition>
+            <main>
+              <Heading level={2}>Notes</Heading>
 
-            <ul>
-              {issues.map(({ node_id, number, title, labels, html_url }) => {
-                if (/pull/.test(html_url)) return;
+              <ul>
+                {issues.map(({ node_id, number, title, labels, html_url }) => {
+                  if (/pull/.test(html_url)) return;
 
-                let tags: string[] = [];
-                for (const label of labels) {
-                  const tag = typeof label === 'string' ? label : label.name;
-                  if (tag) tags.push(tag);
-                }
+                  let tags: string[] = [];
+                  for (const label of labels) {
+                    const tag = typeof label === 'string' ? label : label.name;
+                    if (tag) tags.push(tag);
+                  }
 
-                let note = '📖 Diary';
-                if (tags.includes('Blog')) {
-                  note = '📰 Blog';
-                } else if (tags.includes('Scrap')) {
-                  note = '✍ Scrap';
-                } else if (tags.includes('Book')) {
-                  note = '📚 Book log';
-                } else if (tags.includes('Audio')) {
-                  note = '👂 Listening log';
-                }
+                  let note = '📖 Diary';
+                  if (tags.includes('Blog')) {
+                    note = '📰 Blog';
+                  } else if (tags.includes('Scrap')) {
+                    note = '✍ Scrap';
+                  } else if (tags.includes('Book')) {
+                    note = '📚 Book log';
+                  } else if (tags.includes('Audio')) {
+                    note = '👂 Listening log';
+                  }
 
-                return (
-                  <li key={node_id}>
-                    <Link href={`/notes/${number}`}>
-                      <LinkCard note={note}>{title}</LinkCard>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={node_id}>
+                      <Link href={`/notes/${number}`}>
+                        <LinkCard note={note}>{title}</LinkCard>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <p className="mt-16 text-sm text-tertiary">
-              Based on{' '}
-              <ExternalLink
-                underline
-                href="https://github.com/kimromi/notes/issues"
-              >
-                https://github.com/kimromi/notes/issues
-              </ExternalLink>
-            </p>
-          </main>
-        </PageTransition>
-      </Center>
+              <p className="mt-16 text-sm text-tertiary">
+                Based on{' '}
+                <ExternalLink
+                  underline
+                  href="https://github.com/kimromi/notes/issues"
+                >
+                  https://github.com/kimromi/notes/issues
+                </ExternalLink>
+              </p>
+            </main>
+          </PageTransition>
+        </Center>
 
-      <Footer showExternalServices />
+        <Footer showExternalServices />
+      </Stack>
     </>
   );
 };
